@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>CO2nsume</title>
+        <meta name="description" content="Rutgers University Electrical & Computer Engineering Dept Capstone Project Spring 2021">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap" rel="stylesheet">
+    </head>
+    
+    <body>
+     <div class="container">
+      <header>
+        <h1>C02nsume</h1>
+      </header>
+
+      <form method="get" action="/detect">
+          <p><input type="file"  accept="image/*" name="image" id="file"  onclick="det()" onchange="loadFile(event)"></p>
+          <p><img id="output" width="200" /></p>
+      </form>
+
+      <div class="rotated"><img id="detected" width="200" /></div>
+     </div>
+     <script>
+        function det() {
+        fetch('/detect').then(function(response) {
+        //do something with response
+        })
+        }
+        function loadFile(event) {
+        var image = document.getElementById('output');
+        image.src = URL.createObjectURL(event.target.files[0]);
+
+        var rotated = document.getElementById('detected');
+        rotated.src = image.src;
+}
+     </script>
+    </body>
+</html>
