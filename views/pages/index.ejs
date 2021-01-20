@@ -26,17 +26,12 @@
       <div class="rotated"><img id="detected" width="200" /></div>
      </div>
      <script>
-        function det() {
-        fetch('/upload').then(function(response) {
-        //do something with response
-        })
-        }
         function loadFile(event) {
         var image = document.getElementById('output');
         image.src = URL.createObjectURL(event.target.files[0]);
 
         var rotated = document.getElementById('detected');
-        rotated.src = image.src;
+        rotated.src = 'runs/detect/exp/photo.jpeg';// Does not work 
 }
      </script>
     </body>

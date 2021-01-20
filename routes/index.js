@@ -8,6 +8,7 @@ var router = function (app) {
         res.render('pages/index', {
         });
     });
+    /* //code made before upload post method below--may not need anymore at all
     app.get('/detect', function(req, res) {
         // Call your python script here.
         // I prefer using spawn from the child process module instead of the Python shell
@@ -21,12 +22,14 @@ var router = function (app) {
         process.stderr.on('data', (myErr) => {
             // If anything gets written to stderr, it'll be in the myErr variable
         })
-    })
+    })*/
     app.post('/upload', (req, res) => {
         const fs = require('fs');
 
         // // to detect only 1 image at a time, clear img directory
         fs.rmdirSync("./uploads", {recursive: true});
+        //clear exp so that only newest detection is available
+        fs.rmdirSync("./runs/detect/exp", {recursive: true});
         fs.mkdir(path.join('./', 'uploads'), (err) => { 
             if (err) { 
                 return console.error(err); 
@@ -40,7 +43,7 @@ var router = function (app) {
         
             // By default, multer removes file extensions so let's add them back
             filename: function(req, file, cb) {
-                cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+                cb(null, file.fieldname + path.extname(file.originalname));
             }
         });
         let upload = multer({ storage: storage}).single('photo');
