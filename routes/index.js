@@ -1,4 +1,6 @@
-const express = require('express')
+const express = require('express');
+const multer = require('multer');
+const path = require('path');
 const {spawn} = require('child_process');
 var router = function (app) {
     app.get('/', function (req, res) {
@@ -19,7 +21,38 @@ var router = function (app) {
         process.stderr.on('data', (myErr) => {
             // If anything gets written to stderr, it'll be in the myErr variable
         })
-    })  
+    })
+    app.post('/upload', (req, res) => {
+        const fs = require('fs');
+
+        // // to detect only 1 image at a time, clear img directory
+        fs.rmdirSync("./uploads", {recursive: true});
+        fs.mkdir(path.join('./', 'uploads'), (err) => { 
+            if (err) { 
+                return console.error(err); 
+            } 
+            //console.log('Directory created successfully!'); 
+        }); 
+        const storage = multer.diskStorage({
+            destination: function(req, file, cb) {
+                cb(null, 'uploads/');
+            },
+        
+            // By default, multer removes file extensions so let's add them back
+            filename: function(req, file, cb) {
+                cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+            }
+        });
+        let upload = multer({ storage: storage}).single('photo');
+    
+        upload(req, res, function(err) {
+            if (err) {
+                return res.send(err);
+            }
+            const scriptPath = 'yolov5/detect.py'
+            const process = spawn('python', [scriptPath])
+        });
+    });  
 }
 module.exports=router;
 /*
