@@ -1,28 +1,14 @@
 const express = require('express');
 const multer = require('multer');
 const path = require('path');
-const {spawn} = require('child_process');
+var fs = require('fs')
+const {spawnSync} = require('child_process');
 var router = function (app) {
     app.get('/', function (req, res) {
         //const python = spawn('python', ['yolov5/detect.py']);
         res.render('pages/index', {
         });
     });
-    /* //code made before upload post method below--may not need anymore at all
-    app.get('/detect', function(req, res) {
-        // Call your python script here.
-        // I prefer using spawn from the child process module instead of the Python shell
-        const scriptPath = 'yolov5/detect.py'
-        const process = spawn('python', [scriptPath])
-        process.stdout.on('data', (myData) => {
-            // Do whatever you want with the returned data.
-            // ...
-            res.send("Done!")
-        })
-        process.stderr.on('data', (myErr) => {
-            // If anything gets written to stderr, it'll be in the myErr variable
-        })
-    })*/
     app.post('/upload', (req, res) => {
         const fs = require('fs');
 
@@ -33,8 +19,7 @@ var router = function (app) {
         fs.mkdir(path.join('./', 'uploads'), (err) => { 
             if (err) { 
                 return console.error(err); 
-            } 
-            //console.log('Directory created successfully!'); 
+            }  
         }); 
         const storage = multer.diskStorage({
             destination: function(req, file, cb) {
@@ -53,30 +38,16 @@ var router = function (app) {
                 return res.send(err);
             }
             const scriptPath = 'yolov5/detect.py'
-            const process = spawn('python', [scriptPath])
+            const process = spawnSync('python', [scriptPath])
+            fs.readFile('runs/detect/exp/photo.jpeg', function(err, data) {
+                //let base64Image = new Buffer(data, 'binary').toString('base64');
+                let base64Image=Buffer.from(data,'binary').toString('base64');
+                let imgsrc=`data:image/jpeg;base64,${base64Image}`;
+                res.render('pages/upload',{imgsrc});
+            });
+
         });
     });  
 }
 module.exports=router;
-/*
-app.get('/', (req, res) => {
-res.render('index', {});
- var dataToSend;
- // spawn new child process to call the python script
- const python = spawn('python', ['yolov5/detect.py']);
- // collect data from script
- python.stdout.on('data', function (data) {
-  console.log('Pipe data from python script ...');
-  dataToSend = data.toString();
- });
- // in close event we are sure that stream from child process is closed
- python.on('close', (code) => {
- console.log(`child process close all stdio with code ${code}`);
- // send data to browser
- res.send(dataToSend)
- });
- 
-})
-app.listen(port, () => console.log(`Example app listening on port 
-${port}!`));
-*/
+
