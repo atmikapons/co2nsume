@@ -77,7 +77,7 @@ def check_git_status():
         print(e)
 
 
-def check_requirements(file='requirements.txt'):
+def check_requirements(file='yolov5/requirements.txt'):
     # Check installed dependencies meet requirements
     import pkg_resources
     requirements = pkg_resources.parse_requirements(Path(file).open())
