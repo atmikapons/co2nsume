@@ -31,7 +31,7 @@ db.connect( function (err) {
 });
 */
 
-const routes = require('./routes/index.js')(app);
+const routes = require('./routes/app.js')(app);
 const httpServer = http.createServer(app);
 httpServer.listen(8080); // can change port
 
