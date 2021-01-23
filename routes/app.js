@@ -37,11 +37,17 @@ var router = function (app) {
                 return res.send(err);
             }
             const scriptPath = 'yolov5/detect.py'
-            const process = spawnSync('python', ['yolov5/detect.py', `--save-txt`])
+            const py = spawnSync('python', ['yolov5/detect.py', `--save-txt`],{
+                cwd: process.cwd(),
+                env: process.env,
+                stdio: 'pipe',
+                encoding: 'utf-8'
+            })
+            let output=py.output[1];
             fs.readFile('runs/detect/exp/photo.png', function(err, data) {
                 let base64Image=Buffer.from(data,'binary').toString('base64');
                 let imgsrc=`data:image/png;base64,${base64Image}`;
-                res.render('pages/upload',{imgsrc});
+                res.render('pages/upload',{imgsrc,output});
             });
 
         });
