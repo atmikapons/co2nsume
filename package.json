@@ -18,9 +18,11 @@
   },
   "homepage": "https://github.com/atmikapons/co2nsume#readme",
   "dependencies": {
+    "canvas": "^2.6.1",
     "ejs": "^3.1.5",
     "express": "^4.17.1",
     "multer": "^1.4.2",
-    "server": "^1.0.31"
+    "server": "^1.0.31",
+    "webcam-easy": "^1.0.5"
   }
 }
