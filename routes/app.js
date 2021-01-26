@@ -24,7 +24,10 @@ var router = function (app) {
                 return console.error(err); 
             }  
         }); 
-        const storage = multer.diskStorage({
+        console.log(req.body.photo.value);
+        const imageDataURI = require('image-data-uri');
+        imageDataURI.outputFile("'"+req.body.photo.value+"'", '/uploads/photo.png')
+        /*const storage = multer.diskStorage({
             destination: function(req, file, cb) {
                 cb(null, 'uploads/');
             },
@@ -33,14 +36,14 @@ var router = function (app) {
             filename: function(req, file, cb) {
                 cb(null, file.fieldname + path.extname(file.originalname));
             }
-        });
-        let upload = multer({ storage: storage}).single('photo');
+        });*/
+
+        /*let upload = multer({ storage: storage}).single('photo');
     
         upload(req, res, function(err) {
             if (err) {
                 return res.send(err);
-            }
-            const scriptPath = 'yolov5/detect.py'
+            }*/
             const py = spawnSync('python', ['yolov5/detect.py', `--save-txt`],{
                 cwd: process.cwd(),
                 env: process.env,
@@ -55,8 +58,7 @@ var router = function (app) {
             });
 
         });
-    });  
-}
+    };  
 module.exports=router;
 
 /* 
