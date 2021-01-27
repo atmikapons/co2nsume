@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Progress Bar</title>
+        <meta name="description" content="Rutgers University Electrical & Computer Engineering Dept Capstone Project Spring 2021">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap" rel="stylesheet">
+    </head>
+    
+    <body>
+     <div class="container">
+        <div class="back">
+            <a class="back-button" href="index.ejs">
+                <img width="200" height="200" src="/icons/back.svg" style="overflow: visible">   
+            </a>
+        </div>
+        <div class="progressBar"></div>
+        <div><p id="text">Processing your image</p></div>
+     </div>
+     <script>
+
+        // $.ajax({ url: '/upload',
+        //     type: 'GET'
+        //     })
+        // .fail(function() {
+        //     console.log("Something went wrong!");
+        // });
+
+         const progressBar = document.getElementsByClassName('progressBar')[0];
+         var timesRun = 0;
+         var intervalId = setInterval(() => {
+             timesRun += 1;
+             const computedStyle = getComputedStyle(progressBar);
+             const width = parseFloat(computedStyle.getPropertyValue('--width')) || 0;
+             progressBar.style.setProperty('--width', width + 0.1);
+             if(timesRun > 250){
+                document.getElementById('text').innerText = "Sending your image through the networks";
+            }
+            if(timesRun > 500){
+                document.getElementById('text').innerText = "Scanning for food items";
+            }
+             if(timesRun > 800){
+                clearInterval(intervalId);
+                document.getElementById('text').innerText = "Adding the final touches now!";
+            }
+         }, 25);
+     </script>
+    </body>
+</html>

@@ -1,35 +1,68 @@
 :root {
-    --green: #66a381;
-    --darkgreen: #304d3d;
+    --green: #379e7a;
+    --darkgreen: #0a3b2b;
     --white: #fff8e3;
 }
 
-body{
-    background-color: var(--white);
+html, body{
+    height: 100%;
+    background-image: linear-gradient(to top right,var(--darkgreen),var(--green));
+    font-family: 'Rubik', sans-serif;
 }
 
 h1{
-    font-family: 'Rubik', sans-serif;
-    color: var(--white);
+    color: var(--green);
     font-size: 60px;
-    text-shadow: 2px 2px 5px var(--darkgreen);
+    text-shadow: 2px 2px 3px var(--darkgreen);
     font-weight: 300;
-    
 }
 
 .container{
-    margin: auto;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     width: 100%;
-    height: 96vh;
-    background-color: var(--green);
-    padding: 10px;
+    padding:10px;
+    height: 90%;
+    background-color: var(--white);
+    
     text-align: center;
-    border-radius: 2%;
+    border-radius: 17px;
     box-shadow: 0px 0px 15px var(--darkgreen);
 }
 
-.rotated{
-    transform: rotate(180deg);
+.back-button{
+    float: left;
+    margin: 10px;
+}
+
+.progressBar{
+    position: relative;
+    width: 85%;
+    height: 3em;
+    margin: auto;
+    margin-top: 400px;
+    background-image: linear-gradient(to top right,var(--darkgreen),var(--green));
+    border-radius: 1.5em;
+}
+
+.progressBar::before {
+    content: '';
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: .5em;
+    top: .5em;
+    bottom: .5em;
+    min-width: .2rem;
+    max-width: calc(85% - 1em);
+    width: calc(var(--width, 0) * 1%);
+    background-image: linear-gradient(to top right,var(--green),var(--white));
+    border-radius: 1em;
+    padding: 1em;
 }
 
 @media screen and (min-width:500px){
