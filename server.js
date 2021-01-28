@@ -1,6 +1,6 @@
 
 const express = require('express');
-//const mysql = require('mysql');
+const mysql = require('mysql');
 const http = require('http');
 const path = require('path');
 const app = express();
@@ -14,22 +14,20 @@ app.use(bodyParser.json()); // parse form data client
 app.use(express.static(path.join(__dirname, 'public'))); // configure express to use public folder
 
 // database connection--NEEDS TO BE ADDED IN
-/*
-let db = mysql.createConnection({
-    host: '127.0.0.1', // local host
-    user: 'uname',
-    password: 'pass',
-    database: 'db'
-});
+// let db = mysql.createConnection({
+//     host: '192.168.1.209', // local host
+//     user: 'consume',
+//     password: 'cap@21stone',
+//     database: 'co2nsume'
+// });
 
 
-db.connect( function (err) {
-    if ( err ) {
-        console.error('error connecting: ' + err.stack);
-        return;
-    }
-});
-*/
+// db.connect( function (err) {
+//     if ( err ) {
+//         console.error('error connecting: ' + err.stack);
+//         return;
+//     }
+// });
 
 const routes = require('./routes/app.js')(app);
 const httpServer = http.createServer(app);
