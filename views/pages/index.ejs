@@ -30,36 +30,23 @@
     </form> -->
 
       <main id="webcam-app">
-<!--         <div class="form-control webcam-start" id="webcam-control">
-                <label class="form-switch">
-                <input type="checkbox" id="webcam-switch">
-                <i></i> 
-                <span id="webcam-caption">Click to Start Camera</span>
-                </label>      
-                <button id="cameraFlip" class="btn d-none"></button>                  
-        </div>
-        
-        <div id="errorMsg" class="col-12 col-md-6 alert-danger d-none">
-            Fail to start camera, please allow permision to access camera. <br/>
-            If you are browsing through social media built in browsers, you would need to open the page in Sarafi (iPhone)/ Chrome (Android)
-            <button id="closeError" class="btn btn-primary ml-3">OK</button>
-        </div>  -->
         <div class="md-modal md-effect-12">
             <div id="app-panel" class="app-panel md-content row p-0 m-0">     
                 <div id="webcam-container" class="webcam-container col-12 d-none p-0 m-0">
-                    <video id="webcam" autoplay playsinline width="640" height="480"></video>
+                    <video id="webcam" autoplay playsinline width="400" height="400"></video>
                     <canvas id="canvas" class="d-none"></canvas>
                     <div class="flash"></div>
-                    <audio id="snapSound" src="audio/snap.wav" preload = "auto"></audio>
+                    <audio id="snapSound" src="https://unpkg.com/webcam-easy/demo/audio/snap.wav" preload = "auto"></audio>
                 </div>
                 <div id="cameraControls" class="cameraControls">
-                <form method="post" action="/upload">
                     <a href="#" id="exit-app" title="Exit App" class="d-none"><i class="material-icons">exit_to_app</i></a> 
                     <a href="#" id="take-photo" title="Take Photo" onclick="photo()"><i class="material-icons">camera_alt</i></a>
                     <a href="#" id="download-photo" download="selfie.png" target="_blank" title="Save Photo" class="d-none"><i class="material-icons">Download</i></a>  
                     <a href="#" id="resume-camera"  title="Resume Camera" class="d-none"><i class="material-icons">Back</i></a>
-                    <input name="photo" id="photo" class="btn mt-3" type="submit" value="upload">
-                </form>
+                    <form method="post" action="/upload">
+                    <input class="btn mt-3" type="submit" value="upload">
+                    <input type="hidden" name="photo" id="photo" value="none">
+                    </form>
                 </div>
             </div>        
         </div>
@@ -94,24 +81,10 @@
         var picture = webcam.snap();
         //document.querySelector('#download-photo').href = picture; 
         document.getElementById("photo").value=picture;
-        alert(document.getElementById("photo").value);
+        //alert(document.getElementById("photo").value);
         webcam.stop();
-        /*await fetch(url, {
-    method: 'POST', // *GET, POST, PUT, DELETE, etc.
-    mode: 'cors', // no-cors, *cors, same-origin
-    cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-    credentials: 'same-origin', // include, *same-origin, omit
-    headers: {
-      'Content-Type': ''
-      // 'Content-Type': 'application/x-www-form-urlencoded',
-    },
-    redirect: 'follow', // manual, *follow, error
-    referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-    body: JSON.stringify() // body data type must match "Content-Type" header
-  });*/
     }
         
      </script>
-     <script src='../../routes/app.js'></script>
     </body>
 </html>
