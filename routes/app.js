@@ -26,7 +26,17 @@ var router = function (app) {
         }); 
         var dataUriToBuffer = require('data-uri-to-buffer');
         var decoded = dataUriToBuffer(req.body.photo);
-        console.log(decoded.toString());// I don't know why things break when I get rid of this line
+        setTimeout(() => {  
+        fs.writeFileSync('uploads/photo.png', decoded);
+
+            const py = spawnSync('python', ['yolov5/detect.py', `--save-txt`],{
+                cwd: process.cwd(),
+                env: process.env,
+                stdio: 'pipe',
+                encoding: 'utf-8'
+            }) }, 2000); //delay by 2000, enough time for dataUriToBuffer to finish processing
+        
+        //console.log(decoded.toString());// I don't know why things break when I get rid of this line
         fs.writeFileSync('uploads/photo.png', decoded);
 
             const py = spawnSync('python', ['yolov5/detect.py', `--save-txt`],{
