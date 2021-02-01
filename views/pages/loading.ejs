@@ -36,6 +36,7 @@
             });
 
             const progressBar = document.getElementsByClassName('progressBar')[0];
+            //count the number of intervals that have occured
             var timesRun = 0;
             var intervalId = setInterval(() => {
                 const computedStyle = getComputedStyle(progressBar);
@@ -47,12 +48,15 @@
                 if(timesRun > 250){
                     document.getElementById('text').innerText = "Scanning for food items";
                 }
+                //after 400 intervals, stop looping
                 if(timesRun > 400){
                     clearInterval(intervalId);
                     document.getElementById('text').innerText = "Adding the final touches now!";
                 }
                 timesRun += 1;
-            }, 1);
+            }, 
+            //this number sets the duration of each interval in millis
+            1);
             return;
          }
         
