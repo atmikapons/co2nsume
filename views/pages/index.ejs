@@ -9,6 +9,12 @@
         <link rel="stylesheet" href="/css/styles.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap" rel="stylesheet">
+
+        <script type="text/javascript" src="https://unpkg.com/webcam-easy/dist/webcam-easy.min.js"></script>
+       <!--  <script language="JavaScript" type="text/javascript" src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src='../../routes/app.js'></script> -->
+        
+        
     </head>
     
     <body>
@@ -17,17 +23,66 @@
         <h1>C02nsume</h1>
       </header>
 
-      <form method="post" action="/loading" enctype="multipart/form-data">
-          <p><input type="file"  accept="image/*" name="photo" id="file" onchange="loadFile(event)"></p>
-          <input class="btn mt-3" type="submit" value="upload">
-          <p><img id="output" width="200" /></p>
-      </form>
+    <!-- <form method="post" action="/upload" enctype="multipart/form-data">
+        <p><input type="file" accept="image/*" name="photo" id="file" onchange="loadFile(event)"></p>
+        <input class="btn mt-3" type="submit" value="upload">
+        <p><img id="output" width="200" /></p>
+    </form> -->
+
+      <main id="webcam-app">
+        <div class="md-modal md-effect-12">
+            <div id="app-panel" class="app-panel md-content row p-0 m-0">     
+                <div id="webcam-container" class="webcam-container col-12 d-none p-0 m-0">
+                    <video id="webcam" autoplay playsinline width="400" height="400"></video>
+                    <canvas id="canvas" class="d-none"></canvas>
+                    <div class="flash"></div>
+                    <audio id="snapSound" src="https://unpkg.com/webcam-easy/demo/audio/snap.wav" preload = "auto"></audio>
+                </div>
+                <div id="cameraControls" class="cameraControls">
+                    <a href="/" id="exit-app" title="Exit App" class="d-none"><i class="material-icons">Back</i></a> 
+                    <a href="#" id="take-photo" title="Take Photo" onclick="photo()"><i class="material-icons">Take Photo</i></a>
+                    <form method="post" action="/upload">
+                    <input class="btn mt-3" type="submit" value="upload">
+                    <input type="hidden" name="photo" id="photo" value="none">
+                    </form>
+                </div>
+            </div>        
+        </div>
+        <div class="md-overlay"></div>
+
+        
+
+    </main>
+    
+
      </div>
      <script>
         function loadFile(event) {
         var image = document.getElementById('output');
         image.src = URL.createObjectURL(event.target.files[0]);
         }
+
+        const webcamElement = document.getElementById('webcam');
+        const canvasElement = document.getElementById('canvas');
+        const snapSoundElement = document.getElementById('snapSound');
+        const webcam = new Webcam(webcamElement, 'user', canvasElement, snapSoundElement);
+
+        webcam.start()
+        .then(result =>{
+            console.log("webcam started");
+        })
+        .catch(err => {
+            console.log(err);
+        });
+
+        function photo(){
+        var picture = webcam.snap();
+        //document.querySelector('#download-photo').href = picture; 
+        document.getElementById("photo").value=picture;
+        //alert(document.getElementById("photo").value);
+        webcam.stop();
+    }
+        
      </script>
     </body>
 </html>

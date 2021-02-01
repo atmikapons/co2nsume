@@ -1,3 +1,7 @@
+
+
+        
+  var Canvas = require('canvas');
 const express = require('express');
 const multer = require('multer');
 const path = require('path');
@@ -19,24 +23,14 @@ var router = function (app) {
                 return console.error(err); 
             }  
         }); 
-        const storage = multer.diskStorage({
-            destination: function(req, file, cb) {
-                cb(null, 'uploads/');
-            },
-        
-            // By default, multer removes file extensions so let's add them back
-            filename: function(req, file, cb) {
-                cb(null, file.fieldname + path.extname(file.originalname));
-            }
+        var dataUriToBuffer = require('data-uri-to-buffer');
+        const promiseA = new Promise( (res,rej) => {
+            var decoded = dataUriToBuffer(req.body.photo);
+            res(decoded);
         });
-        let upload = multer({ storage: storage}).single('photo');
-    
-        upload(req, res, function(err) {
-            if (err) {
-                return res.send(err);
-            }
-            const scriptPath = 'yolov5/detect.py'
-            const process = spawnSync('python', ['yolov5/detect.py', `--save-txt`])
+        promiseA.then((decoded)=>{
+        fs.writeFileSync('uploads/photo.png', decoded);
+
             const py = spawnSync('python', ['yolov5/detect.py', `--save-txt`],{
                 cwd: process.cwd(),
                 env: process.env,
@@ -47,11 +41,11 @@ var router = function (app) {
             fs.readFile('runs/detect/exp/photo.png', function(err, data) {
                 let base64Image=Buffer.from(data,'binary').toString('base64');
                 let imgsrc=`data:image/png;base64,${base64Image}`;
-                res.render('pages/upload',{imgsrc});
                 res.render('pages/upload',{imgsrc,output});
             });
+        });
+        
 
         });
-    });  
-}
+    };  
 module.exports=router;

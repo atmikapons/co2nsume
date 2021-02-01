@@ -8,8 +8,10 @@ const bodyParser = require('body-parser');
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json()); // parse form data client
+//app.use(bodyParser.urlencoded({ extended: false }));
+//app.use(bodyParser.json()); // parse form data client
+app.use(bodyParser.json({limit: '50mb', extended: true}))
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true}))
 app.use(express.static(path.join(__dirname, 'public'))); // configure express to use public folder
 
 //database connection--NEEDS TO BE ADDED IN
