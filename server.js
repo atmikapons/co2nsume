@@ -30,7 +30,7 @@ db.connect( function (err) {
     console.log('DB connected!');
 });
 
-const routes = require('./routes/app.js')(app);
+const routes = require('./routes/app.js')(app,db);
 const httpServer = http.createServer(app);
 httpServer.listen(8080); // can change port
 
