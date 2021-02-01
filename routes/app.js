@@ -25,8 +25,11 @@ var router = function (app) {
             }  
         }); 
         var dataUriToBuffer = require('data-uri-to-buffer');
-        var decoded = dataUriToBuffer(req.body.photo);
-        setTimeout(() => {  
+        const promiseA = new Promise( (res,rej) => {
+            var decoded = dataUriToBuffer(req.body.photo);
+            res(decoded);
+        });
+        promiseA.then((decoded)=>{
         fs.writeFileSync('uploads/photo.png', decoded);
 
             const py = spawnSync('python', ['yolov5/detect.py', `--save-txt`],{
@@ -40,7 +43,8 @@ var router = function (app) {
                 let base64Image=Buffer.from(data,'binary').toString('base64');
                 let imgsrc=`data:image/png;base64,${base64Image}`;
                 res.render('pages/upload',{imgsrc,output});
-            }); }, 2000); //delay by 2000, enough time for dataUriToBuffer to finish processing
+            });
+        });
         
 
         });
