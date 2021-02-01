@@ -1,7 +1,4 @@
-
-
-        
-  var Canvas = require('canvas');
+var Canvas = require('canvas');
 const express = require('express');
 const multer = require('multer');
 const path = require('path');
@@ -24,6 +21,12 @@ var router = function (app) {
                 return console.error(err); 
             }  
         }); 
+
+        res.render('pages/loading');
+        
+    });
+
+    app.post('/loading', (req, res) => {
         //take dataURI from upload and turn into buffer
         var dataUriToBuffer = require('data-uri-to-buffer');
         const promiseA = new Promise( (res,rej) => {
@@ -32,24 +35,23 @@ var router = function (app) {
         });
         //turn buffer into image and then run detect.py
         promiseA.then((decoded)=>{
-        fs.writeFileSync('uploads/photo.png', decoded);
+            fs.writeFileSync('uploads/photo.png', decoded);
 
-        const py = spawnSync('python', ['yolov5/detect.py', `--save-txt`],{
-                cwd: process.cwd(),
-                env: process.env,
-                stdio: 'pipe',
-                encoding: 'utf-8'
-        })
-        let output=py.output[1];
-        //send image and output line to upload page
-        fs.readFile('runs/detect/exp/photo.png', function(err, data) {
-            let base64Image=Buffer.from(data,'binary').toString('base64');
-            let imgsrc=`data:image/png;base64,${base64Image}`;
-            res.render('pages/upload',{imgsrc,output});
+            const py = spawnSync('python', ['yolov5/detect.py', `--save-txt`],{
+                    cwd: process.cwd(),
+                    env: process.env,
+                    stdio: 'pipe',
+                    encoding: 'utf-8'
+            })
+            let output=py.output[1];
+            //send image and output line to upload page
+            fs.readFile('runs/detect/exp/photo.png', function(err, data) {
+                let base64Image=Buffer.from(data,'binary').toString('base64');
+                let imgsrc=`data:image/png;base64,${base64Image}`;
+                res.render('pages/upload',{imgsrc,output});
+            });
         });
-    });
-        
+    })
 
-    });
-    };  
+};  
 module.exports=router;

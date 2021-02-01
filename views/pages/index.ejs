@@ -58,8 +58,8 @@
      </div>
      <script>
         function loadFile(event) {
-        var image = document.getElementById('output');
-        image.src = URL.createObjectURL(event.target.files[0]);
+            var image = document.getElementById('output');
+            image.src = URL.createObjectURL(event.target.files[0]);
         }
 
         const webcamElement = document.getElementById('webcam');
@@ -76,12 +76,12 @@
         });
 
         function photo(){
-        var picture = webcam.snap();
-        //document.querySelector('#download-photo').href = picture; 
-        document.getElementById("photo").value=picture;
-        //alert(document.getElementById("photo").value);
-        webcam.stop();
-    }
+            var picture = webcam.snap();
+            //document.querySelector('#download-photo').href = picture; 
+            document.getElementById("photo").value=picture;
+            //alert(document.getElementById("photo").value);
+            webcam.stop();
+        }
         
      </script>
     </body>
