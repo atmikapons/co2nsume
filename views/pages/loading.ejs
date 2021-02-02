@@ -25,15 +25,11 @@
         </div>
         <div class="progressBar"></div>
         <div><p id="text">Processing your image</p></div>
+        <form id="f" method="post" action="/loading"></form>
      </div>
      <script>
-         window.onload = function() {
-            $.ajax({ url: '/loading',
-                type: 'GET'
-            })
-            .fail(function() {
-                console.log("Something went wrong!");
-            });
+         document.getElementById("f").submit();
+
 
             const progressBar = document.getElementsByClassName('progressBar')[0];
             //count the number of intervals that have occured
@@ -41,7 +37,7 @@
             var intervalId = setInterval(() => {
                 const computedStyle = getComputedStyle(progressBar);
                 const width = parseFloat(computedStyle.getPropertyValue('--width')) || 0;
-                progressBar.style.setProperty('--width', width + 0.1);
+                progressBar.style.setProperty('--width', width + 0.2);
                 if(timesRun > 100){
                     document.getElementById('text').innerText = "Sending your image through the networks";
                 }
@@ -56,9 +52,7 @@
                 timesRun += 1;
             }, 
             //this number sets the duration of each interval in millis
-            1);
-            return;
-         }
+            50);
         
      </script>
     </body>

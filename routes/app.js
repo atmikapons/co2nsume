@@ -21,12 +21,6 @@ var router = function (app) {
                 return console.error(err); 
             }  
         }); 
-
-        res.render('pages/loading');
-        
-    });
-
-    app.post('/loading', (req, res) => {
         //take dataURI from upload and turn into buffer
         var dataUriToBuffer = require('data-uri-to-buffer');
         const promiseA = new Promise( (res,rej) => {
@@ -36,6 +30,12 @@ var router = function (app) {
         //turn buffer into image and then run detect.py
         promiseA.then((decoded)=>{
             fs.writeFileSync('uploads/photo.png', decoded);
+
+        res.render('pages/loading');
+        
+    });
+
+    app.post('/loading', (req, res) => {
 
             const py = spawnSync('python', ['yolov5/detect.py', `--save-txt`],{
                     cwd: process.cwd(),
