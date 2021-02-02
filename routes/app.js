@@ -6,8 +6,7 @@ var fs = require('fs')
 const {spawnSync} = require('child_process');
 var router = function (app, db) {
     app.get('/', function (req, res) {
-            //res.render('pages/login', { //changed the start page to the login page!
-            res.render('pages/index');
+            res.render('pages/login', { //changed the start page to the login page!
         });
     //});
     app.post('/upload', (req, res) => {
