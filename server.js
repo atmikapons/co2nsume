@@ -31,7 +31,10 @@ db.connect( function (err) {
 });
 
 const routes = require('./routes/app.js')(app,db);
+const routes2 = require('./routes/login.js')(app,db); //for extra routing js files (login)
+
 const httpServer = http.createServer(app);
 httpServer.listen(8080); // can change port
 
 module.exports = app; // can be useful when testing
+module.exports.dbName=db; //for extra routing js files (login)
