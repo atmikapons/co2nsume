@@ -4,11 +4,12 @@ const multer = require('multer');
 const path = require('path');
 var fs = require('fs')
 const {spawnSync} = require('child_process');
-var router = function (app) {
+var router = function (app, db) {
     app.get('/', function (req, res) {
-        res.render('pages/login', { //changed the start page to the login page!
+            //res.render('pages/login', { //changed the start page to the login page!
+            res.render('pages/index');
         });
-    });
+    //});
     app.post('/upload', (req, res) => {
         const fs = require('fs');
         // // to detect only 1 image at a time, clear img directory
@@ -35,8 +36,7 @@ var router = function (app) {
         
     });
 
-    app.post('/loading', (req, res) => {
-
+    app.post('/loading', async(req, res) => {
             const py = spawnSync('python', ['yolov5/detect.py', `--save-txt`],{
                     cwd: process.cwd(),
                     env: process.env,
@@ -44,14 +44,59 @@ var router = function (app) {
                     encoding: 'utf-8'
             })
             let output=py.output[1];
+            console.log("py.output[1]: "+ py.output[1]);
+
+            var carbon_estimate = await outputToCarbonEstimate(output);
+            console.log('total carbon estimate:' + carbon_estimate);
+
             //send image and output line to upload page
             fs.readFile('runs/detect/exp/photo.png', function(err, data) {
                 let base64Image=Buffer.from(data,'binary').toString('base64');
                 let imgsrc=`data:image/png;base64,${base64Image}`;
-                res.render('pages/upload',{imgsrc,output});
+                res.render('pages/upload',{imgsrc,output, carbon_estimate});
             });
+
         });
     })
 
+    async function outputToCarbonEstimate(output) {
+        //output carbon estimates
+        var out = output.split(" ");
+        console.log("output: " + out);
+        var carbon_estimate = 0;
+        for(var i = 2; i < out.length-1; i+=2) {
+
+            let int_string = out[i];
+            let text = out[i+1];
+            let int_parsed = parseFloat(int_string);
+            console.log('parsed number:' + typeof int_parsed);
+
+            let carbon_amount = dbGetEstimates(text);
+            carbon_amount.then((result) => {
+                carbon_estimate += (int_parsed * result);
+                console.log("promise: " + result);
+            });
+
+            await carbon_amount;
+        }
+        return carbon_estimate;
+    }
+
+    function dbGetEstimates(text){
+        console.log("inside func2");
+        return new Promise((resolve, reject) => {
+            db.query(
+                'SELECT kg_carbon_per_item FROM `Carbon Estimate` WHERE Food = "'+ text +'"',
+              (err, result) => {
+                if(err) resolve(0);
+                else {
+                    // console.log("query done");
+                    // console.log("query result: " + result[0].kg_carbon_per_item);
+                    resolve(result[0].kg_carbon_per_item);
+                }
+              }
+            );
+          });
+    }
 };  
 module.exports=router;
