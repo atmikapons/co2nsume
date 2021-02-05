@@ -52,6 +52,11 @@ app.get('/index', function(request, response) {
 	}
 	response.end();
 });
+
+app.get('/signup', function (request, response) {
+	response.render('pages/signup');
+	response.end();
+});
 }
 module.exports=router;
 

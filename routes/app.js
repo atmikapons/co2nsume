@@ -97,5 +97,6 @@ var router = function (app, db) {
             );
           });
     }
-};  
+});
+}  
 module.exports=router;

@@ -32,6 +32,7 @@ db.connect( function (err) {
 
 const routes = require('./routes/app.js')(app,db);
 const routes2 = require('./routes/login.js')(app,db); //for extra routing js files (login)
+const routes3 = require('./routes/signup.js')(app, db); //for extra routing js files (signup)
 
 const httpServer = http.createServer(app);
 httpServer.listen(8080); // can change port
