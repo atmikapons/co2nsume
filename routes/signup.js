@@ -6,6 +6,8 @@ var path = require('path');
 
 var app = express();
 var router = function (app, db) {
+
+    //post request for signup page
     app.post('/signup', function (req, res) {
         let username = req.body.username;
         let first = req.body.first;

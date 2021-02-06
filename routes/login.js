@@ -22,15 +22,16 @@ app.get('/', function(request, response) {
 
 //Post request to check db for first name & password combo
 app.post('/auth', function(request, response) {
-    // console.log("beginning of post");
+	// console.log("beginning of post");
+	var username = request.body.username;
 	var first = request.body.first;
 	var password = request.body.password;
 	if (first && password) {
         // console.log("inside first && pass");
-		db.query('SELECT * FROM `User Info` WHERE `First` = ? AND `Password` = ?', [first, password], function(error, results, fields) {
+		db.query('SELECT * FROM `User Info` WHERE `Username` = ? AND `Password` = ?', [username, password], function(error, results, fields) {
 			if (results.length > 0) {
 				request.session.loggedin = true;
-				request.session.first = first;
+				request.session.username = username;
 				response.redirect('/index');
 			} else {
 				response.send('Incorrect Username and/or Password!');
