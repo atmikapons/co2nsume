@@ -7,21 +7,17 @@
         <meta name="description" content="Rutgers University Electrical & Computer Engineering Dept Capstone Project Spring 2021">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/css/styles.css">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap" rel="stylesheet">
 
-        <script type="text/javascript" src="https://unpkg.com/webcam-easy/dist/webcam-easy.min.js"></script>
-       <!--  <script language="JavaScript" type="text/javascript" src="//code.jquery.com/jquery-3.3.1.min.js"></script>
-        <script src='../../routes/app.js'></script> -->
-        
-        
+        <script type="text/javascript" src="https://unpkg.com/webcam-easy/dist/webcam-easy.min.js"></script>        
     </head>
     
     <body>
      <div class="container">
-      <header>
-        <h1>C02nsume</h1>
-      </header>
+        <div class="back">
+            <a class="back-button" href="/">
+                <img class="back-icon" width="200" height="200" src="/icons/back.svg" style="overflow: visible;">   
+            </a>
+        </div>
 
     <!-- <form method="post" action="/upload" enctype="multipart/form-data">
         <p><input type="file" accept="image/*" name="photo" id="file" onchange="loadFile(event)"></p>
@@ -39,11 +35,10 @@
                     <audio id="snapSound" src="https://unpkg.com/webcam-easy/demo/audio/snap.wav" preload = "auto"></audio>
                 </div>
                 <div id="cameraControls" class="cameraControls">
-                    <a href="/" id="exit-app" title="Exit App" class="d-none"><i class="material-icons">Back</i></a> 
-                    <a href="#" id="take-photo" title="Take Photo" onclick="photo()"><i class="material-icons">Take Photo</i></a>
+                    <a class="button" href="#" id="take-photo" title="Take Photo" onclick="photo()">Take Photo</a>
                     <form method="post" action="/upload">
-                    <input class="btn mt-3" type="submit" value="upload">
-                    <input type="hidden" name="photo" id="photo" value="none">
+                        <input class="button" type="submit" value="upload">
+                        <input class="captured" type="hidden" name="photo" id="photo" value="none" width="400" height="400">
                     </form>
                 </div>
             </div>        

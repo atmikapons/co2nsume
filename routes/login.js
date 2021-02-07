@@ -24,9 +24,8 @@ app.get('/', function(request, response) {
 app.post('/auth', function(request, response) {
 	// console.log("beginning of post");
 	var username = request.body.username;
-	var first = request.body.first;
 	var password = request.body.password;
-	if (first && password) {
+	if (username && password) {
         // console.log("inside first && pass");
 		db.query('SELECT * FROM `User Info` WHERE `Username` = ? AND `Password` = ?', [username, password], function(error, results, fields) {
 			if (results.length > 0) {
