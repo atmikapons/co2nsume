@@ -11,11 +11,6 @@
     
     <body>
      <div class="container">
-        <div class="back">
-            <a class="back-button" href="index.ejs">
-                <img width="200" height="200" src="/icons/back.svg" style="overflow: visible">   
-            </a>
-        </div>
         <div class="progressBar"></div>
         <div><p id="text">Processing your image</p></div>
         <form id="f" method="post" action="/loading"></form>
@@ -23,29 +18,28 @@
      <script>
          document.getElementById("f").submit();
 
-
-            const progressBar = document.getElementsByClassName('progressBar')[0];
-            //count the number of intervals that have occured
-            var timesRun = 0;
-            var intervalId = setInterval(() => {
-                const computedStyle = getComputedStyle(progressBar);
-                const width = parseFloat(computedStyle.getPropertyValue('--width')) || 0;
-                progressBar.style.setProperty('--width', width + 0.2);
-                if(timesRun > 100){
-                    document.getElementById('text').innerText = "Sending your image through the networks";
-                }
-                if(timesRun > 250){
-                    document.getElementById('text').innerText = "Scanning for food items";
-                }
-                //after 400 intervals, stop looping
-                if(timesRun > 400){
-                    clearInterval(intervalId);
-                    document.getElementById('text').innerText = "Adding the final touches now!";
-                }
-                timesRun += 1;
-            }, 
-            //this number sets the duration of each interval in millis
-            50);
+        const progressBar = document.getElementsByClassName('progressBar')[0];
+        //count the number of intervals that have occured
+        var timesRun = 0;
+        var intervalId = setInterval(() => {
+            const computedStyle = getComputedStyle(progressBar);
+            const width = parseFloat(computedStyle.getPropertyValue('--width')) || 0;
+            progressBar.style.setProperty('--width', width + 0.2);
+            if(timesRun > 100){
+                document.getElementById('text').innerText = "Sending your image through the networks";
+            }
+            if(timesRun > 250){
+                document.getElementById('text').innerText = "Scanning for food items";
+            }
+            //after 400 intervals, stop looping
+            if(timesRun > 400){
+                clearInterval(intervalId);
+                document.getElementById('text').innerText = "Adding the final touches now!";
+            }
+            timesRun += 1;
+        }, 
+        //this number sets the duration of each interval in millis
+        50);
         
      </script>
     </body>
