@@ -48,6 +48,10 @@ var router = function (app, db) {
             var carbon_estimate = await outputToCarbonEstimate(output);
             console.log('total carbon estimate:' + carbon_estimate);
 
+            //outputs none if no food is detected
+            if(carbon_estimate == 0){
+                output = "Foods are: None";
+            }
             //send image and output line to upload page
             fs.readFile('runs/detect/exp/photo.png', function(err, data) {
                 let base64Image=Buffer.from(data,'binary').toString('base64');
@@ -69,6 +73,11 @@ var router = function (app, db) {
             let text = out[i+1];
             let int_parsed = parseFloat(int_string);
             console.log('parsed number:' + typeof int_parsed);
+
+            if(out[i+1] == "hot") {
+                text = out[i+1] + out[i+2];
+                i += 1;
+            }
 
             let carbon_amount = dbGetEstimates(text);
             carbon_amount.then((result) => {
