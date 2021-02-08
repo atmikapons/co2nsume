@@ -85,13 +85,13 @@ var router = function (app, db) {
         console.log("inside func2");
         return new Promise((resolve, reject) => {
             db.query(
-                'SELECT kg_carbon_per_item FROM `Carbon Estimate` WHERE Food = "'+ text +'"',
+                `CALL GetEstimates(?)`, [text], 
               (err, result) => {
                 if(err) resolve(0);
                 else {
-                    // console.log("query done");
-                    // console.log("query result: " + result[0].kg_carbon_per_item);
-                    resolve(result[0].kg_carbon_per_item);
+                     //console.log("query done");
+                     //console.log("query result: " + result[0][0].kg_carbon_per_item);
+                    resolve(result[0][0].kg_carbon_per_item);
                 }
               }
             );
