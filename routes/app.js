@@ -52,6 +52,17 @@ var router = function (app, db) {
             if(carbon_estimate == 0){
                 output = "Foods are: None";
             }
+            //add food and carbon sum into the food log
+            else{
+                let out=output.slice(11);
+                let values=[[req.session.username, out, carbon_estimate]];
+                let addFood = "INSERT INTO `Food Log` (Username, Food_Recognized, Carbon_Sum) VALUES ?";
+                db.query(addFood, [values], function (err, result) {
+                    if (err) {
+                        return res.status(500).send(err);
+                    }
+                });
+            }
             //send image and output line to upload page
             fs.readFile('runs/detect/exp/photo.png', function(err, data) {
                 let base64Image=Buffer.from(data,'binary').toString('base64');
