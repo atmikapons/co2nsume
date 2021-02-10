@@ -177,6 +177,38 @@ input::placeholder{
     padding: 1em;
 }
 
+/* HOME */
+
+h1home{
+  color: var(--text);
+  font-size: 42px;
+  font-weight: 300;
+  /* margin: auto; */
+  /* margin-left: -400px; */
+  margin-top: -200px;
+  margin-bottom: 50px;
+}
+
+.home {
+  width: 400px;
+  overflow-y: auto;
+  margin-left: 75px;
+}
+
+.home > a {
+  width: 75px;
+  height: 50px;
+  float: left;
+  border: 0px;
+  padding: 15px;
+  margin: auto;
+  border-radius: 10px;
+  color: var(--white);
+  text-decoration: none;
+  cursor: grab;
+  
+}
+
 /* MEDIA QUERIES */ 
 @media screen and (min-width:600px){
     .container{

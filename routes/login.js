@@ -43,10 +43,10 @@ var router = function (app,db) {
 		}
 	});
 
-	//Go to home page (camera page for now!!) after logging in
+	//Go to home page after logging in
 	app.get('/login', function(request, response) {
 		if (request.session.loggedin) {
-			response.render('pages/upload');
+			response.render('pages/home');
 		} else {
 			response.send('Please login to view this page!');
 		}
