@@ -20,9 +20,10 @@ html, body{
 
 h1{
     color: var(--text);
-    font-size: 60px;
-    text-shadow: 2px 2px 3px var(--textshadow);
+    font-size: 42px;
     font-weight: 300;
+    margin: auto;
+    margin-bottom: 10px;
 }
 
 .container{
@@ -75,9 +76,13 @@ h1{
 }
 
 /* LOGIN */
+.login{
+  width: 60%;
+}
 
-.login-form {
-  width: 80%;
+
+form {
+  width: 100%;
   margin: auto;
   /* transform: translateY(-40px); */
 
@@ -87,8 +92,8 @@ h1{
   align-content: center;
 }
 
-.login-form input[type="password"],
-.login-form input[type="text"] {
+input[type="password"],
+input[type="text"] {
   width: 100%;
   padding: 15px;
   border: 1px solid #8ac926;
@@ -102,15 +107,25 @@ input::placeholder{
 }
 
 .loginb{
-  transform: translate(-180px, 70px);
+  transform: translate(150px, 90px);
   /* margin-top: 75px; */
 }
 
 .signup{
-  transform: translate(100px, 120px);
-  margin-top: 80px;
+  transform: translate(-35px, 60px);
+  /* margin-top: 80px; */
   font-size: smaller;
   background-color: #8ac926;
+}
+
+/* SIGN UP */
+.create{
+  transform: translate(150px, 150px);
+}
+
+.signup-form{
+  margin-top: 10px;
+  width: 60%;
 }
 
 /* UPLOAD */
@@ -120,7 +135,7 @@ input::placeholder{
 
 .cameraControls {
   display: flex;
-  flex-direction: row;
+  /* flex-direction: column; */
   justify-content: center;
   align-content: center;
 }
@@ -128,26 +143,12 @@ input::placeholder{
 .upload{
   margin: auto;
   margin-top: 10px;
-  transform: translateX(-35px);
+  transform: translate(165px, 30px);
 }
 
 .retakephoto{
   margin-top: 130px;
 }
-
-/* #canvas{
-  background-color: transparent;
-  position: absolute;
-  width: auto;
-  height: 100vh;
-  z-index: 9999;
-  margin: auto;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-}  */
 
 /* LOADING */
 .progressBar{

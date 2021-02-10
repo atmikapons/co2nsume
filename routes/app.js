@@ -67,7 +67,7 @@ var router = function (app, db) {
             fs.readFile('runs/detect/exp/photo.png', function(err, data) {
                 let base64Image=Buffer.from(data,'binary').toString('base64');
                 let imgsrc=`data:image/png;base64,${base64Image}`;
-                res.render('pages/upload',{imgsrc,output, carbon_estimate});
+                res.render('pages/result',{imgsrc,output, carbon_estimate});
             });
 
         });
