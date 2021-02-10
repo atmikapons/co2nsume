@@ -7,16 +7,21 @@
         <meta name="description" content="Rutgers University Electrical & Computer Engineering Dept Capstone Project Spring 2021">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/css/styles.css">
-
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
         <script type="text/javascript" src="https://unpkg.com/webcam-easy/dist/webcam-easy.min.js"></script>        
     </head>
     
     <body>
      <div class="container">
         <div class="back">
-            <a class="back-button" href="/">
-                <img class="back-icon" width="200" height="200" src="/icons/back.svg" style="overflow: visible;">   
-            </a>
+<!--             
+                <form action="/">
+                    <button class="mdc-icon-button material-icons">arrow_back</button>
+                </form>
+                <button class="mdc-icon-button material-icons">arrow_back</button>
+        
+             -->
+             <a href="/" id="exit-app" title="Exit App" class="button back"><i class="material-icons">arrow_back</i></a>             
         </div>
 
     <!-- <form method="post" action="/upload" enctype="multipart/form-data">
@@ -35,11 +40,13 @@
                     <audio id="snapSound" src="https://unpkg.com/webcam-easy/demo/audio/snap.wav" preload = "auto"></audio>
                 </div>
                 <div id="cameraControls" class="cameraControls">
-                    <a class="button" href="#" id="take-photo" title="Take Photo" onclick="photo()">Take Photo</a>
+                    <!-- <a href="/" id="exit-app" title="Exit App" class="d-none"><i class="material-icons">Back</i></a>  -->
                     <form method="post" action="/upload">
-                        <input class="button" type="submit" value="upload">
-                        <input class="captured" type="hidden" name="photo" id="photo" value="none" width="400" height="400">
+                        <input class="button upload" type="submit" value="upload" id='upload'>
+                        <input class="captured" type="hidden" name="photo" id="photo" value="none">
                     </form>
+                    <a class="button takephoto" href="#" id="take-photo" title="Take Photo" onclick="photo()">Take Photo</a>
+                    <a class="button retakephoto" href="/index" id="retake-photo" title="Retake Photo">Retake Photo</a>
                 </div>
             </div>        
         </div>
@@ -61,6 +68,12 @@
         const canvasElement = document.getElementById('canvas');
         const snapSoundElement = document.getElementById('snapSound');
         const webcam = new Webcam(webcamElement, 'user', canvasElement, snapSoundElement);
+        const uploadButton = document.getElementById('upload');
+        const takephoto = document.getElementById('take-photo');
+        const retakephoto = document.getElementById('retake-photo');
+        
+        uploadButton.style.display="none"
+        retakephoto.style.display="none"
 
         webcam.start()
         .then(result =>{
@@ -76,6 +89,10 @@
             document.getElementById("photo").value=picture;
             //alert(document.getElementById("photo").value);
             webcam.stop();
+            webcamElement.style.display="none";
+            uploadButton.style.display="block";
+            retakephoto.style.display="block";
+            takephoto.style.display="none";
         }
         
      </script>

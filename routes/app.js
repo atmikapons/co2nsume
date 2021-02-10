@@ -83,7 +83,7 @@ var router = function (app, db) {
             let int_string = out[i];
             let text = out[i+1];
             let int_parsed = parseFloat(int_string);
-            console.log('parsed number:' + typeof int_parsed);
+            //console.log('parsed number:' + typeof int_parsed);
 
             if(out[i+1] == "hot") {
                 text = out[i+1] + out[i+2];
@@ -93,7 +93,7 @@ var router = function (app, db) {
             let carbon_amount = dbGetEstimates(text);
             carbon_amount.then((result) => {
                 carbon_estimate += (int_parsed * result);
-                console.log("promise: " + result);
+                //console.log("promise: " + result);
             });
 
             await carbon_amount;
@@ -102,7 +102,7 @@ var router = function (app, db) {
     }
 
     function dbGetEstimates(text){
-        console.log("inside func2");
+        //console.log("inside func2");
         return new Promise((resolve, reject) => {
             db.query(
                 `CALL GetEstimates(?)`, [text], 
