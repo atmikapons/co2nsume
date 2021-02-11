@@ -53,9 +53,16 @@ var router = function (app,db) {
 		response.end();
 	});
 
+	//Go to signup page when click signup button
 	app.get('/signup', function (request, response) {
 		response.render('pages/signup');
 		response.end();
+	});
+
+	//Go to login page when click logout button
+	app.get("/logout",(request,response)=>{
+		request.session.destroy();
+		response.redirect("/");
 	});
 }
 module.exports=router;

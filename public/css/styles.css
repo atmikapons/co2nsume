@@ -206,7 +206,20 @@ h1home{
   color: var(--white);
   text-decoration: none;
   cursor: grab;
-  
+}
+
+.logout > a {
+  width: 50px;
+  height: 25px;
+  float: left;
+  border: 0px;
+  padding: 15px;
+  /* margin: auto; */
+  margin-top: 200px;
+  border-radius: 10px;
+  color: var(--white);
+  text-decoration: none;
+  cursor: grab;
 }
 
 /* MEDIA QUERIES */ 
