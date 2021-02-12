@@ -69,6 +69,10 @@ h1{
   font-size: 12px;
 }
 
+.button:hover{
+  background-color: var(--containershadow);
+}
+
 .back{
   padding: 0px;
   color: var(--offwhite);
@@ -124,15 +128,16 @@ input[type=text], input[type=password] {
 
 .cameraControls {
   display: flex;
-  /* flex-direction: column; */
+  flex-direction: column;
   justify-content: center;
   align-content: center;
+  width: 25%;
+  margin: auto;
 }
 
 .upload{
   margin: auto;
   margin-top: 10px;
-  transform: translate(165px, 30px);
 }
 
 .retakephoto{

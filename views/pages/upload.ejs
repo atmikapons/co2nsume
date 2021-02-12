@@ -14,15 +14,8 @@
     <body>
      <div class="container">
         <div class="back">
-             <a href="/home" id="exit-app" title="Back to Home" class="button back"><i class="material-icons">arrow_back</i></a>             
+             <a href="/home" id="exit-app" title="Back to Home" class="back"><i class="material-icons">arrow_back</i></a>             
         </div>
-
-    <!-- <form method="post" action="/upload" enctype="multipart/form-data">
-        <p><input type="file" accept="image/*" name="photo" id="file" onchange="loadFile(event)"></p>
-        <input class="btn mt-3" type="submit" value="upload">
-        <p><img id="output" width="200" /></p>
-    </form> -->
-
       <main id="webcam-app">
         <div class="md-modal md-effect-12">
             <div id="app-panel" class="app-panel md-content row p-0 m-0">     
@@ -39,7 +32,7 @@
                         <input class="captured" type="hidden" name="photo" id="photo" value="none">
                     </form>
                     <a class="button takephoto" href="#" id="take-photo" title="Take Photo" onclick="photo()">Take Photo</a>
-                    <a class="button retakephoto" href="/login" id="retake-photo" title="Retake Photo">Retake Photo</a>
+                    <a class="button retakephoto" href="/upload" id="retake-photo" title="Retake Photo">Retake Photo</a>
                 </div>
             </div>        
         </div>
