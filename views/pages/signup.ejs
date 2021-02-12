@@ -5,37 +5,6 @@
 		<title>Sign up</title>
 		<link rel="stylesheet" href="/css/styles.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
-		<!-- <style>
-        .signup-form {
-			width: 300px;
-			margin: 0 auto;
-			font-family: Tahoma, Geneva, sans-serif;
-		}
-		.registration-form h1 {
-			text-align: center;
-			color: #4d4d4d;
-			font-size: 24px;
-			padding: 20px 0 20px 0;
-		}
-		.registration-form input[type="password"],
-		.registration-form input[type="text"] {
-			width: 100%;
-			padding: 15px;
-			border: 1px solid #dddddd;
-			margin-bottom: 15px;
-			box-sizing:border-box;
-		}
-		.registration-form input[type="submit"] {
-			width: 100%;
-			padding: 15px;
-			background-color: #535b63;
-			border: 0;
-			box-sizing: border-box;
-			cursor: pointer;
-			font-weight: bold;
-			color: #ffffff;
-		}
-		</style> -->
 		<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
@@ -47,15 +16,17 @@
 	<body>
 		<div class="container">
 			<div class="back">
-				<a href="/" id="exit-app" title="Back to Login" class="button back"><i class="material-icons">arrow_back</i></a>             
+				<a href="/" id="exit-app" title="Back to Login" class="back"><i class="material-icons">arrow_back</i></a>             
 		   </div>
 			<h1>Create an account</h1>
 			<form class="form signup-form" action="" method="POST" enctype="multipart/form-data">
 				<!-- insert an alert if username is not unique -->
-				<input type="text" id="user-name" placeholder="Username - must be unique" required>
-				<input type="text" id="first-name" placeholder="First Name" required>
-				<input type="text" id="last-name" placeholder="Last Name" required>
-				<input type="password" id="password" placeholder="Password" required>
+				<fieldset>
+					<input type="text" id="user-name" placeholder="Username - must be unique" required>
+					<input type="text" id="first-name" placeholder="First Name" required>
+					<input type="text" id="last-name" placeholder="Last Name" required>
+					<input type="password" id="password" placeholder="Password" required>
+				</fieldset>
 				<button type="submit" class="button create" id="create-user-button"> Create </button>               
             </form>
 		</div>
