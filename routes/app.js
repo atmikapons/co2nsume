@@ -62,6 +62,34 @@ var router = function (app, db) {
                         return res.status(500).send(err);
                     }
                 });
+
+                //food output fixed for non-plural form
+                let strings = output.split(" ");
+                let result = 'Foods are: ';
+                for(var i = 2; i < strings.length-1; i+=2) {
+                    if(strings[i] == '1') {
+                        if(strings[i+1] == 'hot'){
+                            result += (strings[i] + ' ' + strings[i+1] + ' ' + strings[i+2].slice(0, -1) + ' ');
+                            i += 1;
+                        }
+                        else if(strings[i+1] == 'sandwiches'){
+                            result += (strings[i] + ' ' + strings[i+1].slice(0, -2) + ' ');
+                        }
+                        else{
+                            result += (strings[i] + ' ' + strings[i+1].slice(0, -1) + ' ');
+                        }
+                    }
+                    else {
+                        if(strings[i+1] == 'hot') {
+                            result += (strings[i] + ' ' + strings[i+1] + ' ' + strings[i+2] + ' '); 
+                            i += 1;
+                        }
+                        else{
+                            result += (strings[i] + ' ' + strings[i+1] + ' '); 
+                        }
+                    }
+                }
+                output = result;
             }
             //send image and output line to upload page
             fs.readFile('runs/detect/exp/photo.png', function(err, data) {
