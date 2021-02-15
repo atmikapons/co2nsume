@@ -1,0 +1,74 @@
+
+<div id = "CO2perWeek-collapse" class="collapse">
+    <div class="card-body">
+        <p align="center" style="font-size:20px"> Emissions Last Week</p>
+        <p align="left" style="padding-left:20px;font-size:12px"> Data recorded from the past 7 days.</p>
+        <!-- Chart -->
+        <canvas id="chartByWeek" height="300"></canvas>
+        <%let date = [];%>
+        <%let sum = [];%>
+
+        <% if ( CbyW!= null ) { %>
+            <% CbyW.forEach(function(record) {  %>
+                <% date.push(record.Day); %>
+                <% sum.push(record.Sum);%>
+            <% }) %>
+        <% } %>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script>
+            let ctxByWeek= document.getElementById('chartByWeek').getContext('2d');
+            let chartByWeekLabels = "<%= date %>";
+            chartByWeekLabels = chartByWeekLabels.split(',');
+            let chartByWeekData = [<%=sum %>]; // this seems like an issue but it's the only way I can get the graph to show up
+            let chartByWeek = new Chart(ctxByWeek, {
+                type: 'bar',
+                data: {
+                    labels: chartByWeekLabels,
+                    datasets: [{
+                        label: 'kg of CO2 per day',
+                        data: chartByWeekData,
+                        borderWidth: 1,
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+        </script>
+
+        <!-- Table -->
+        <table id = "byWeek-table" class = "table table-bordered" align="center">
+            <thead>
+                <tr>
+                    <!-- table headings -->
+                    <th class="text">Date</th>
+                    <th class="text"> kg CO2 emissions </th>
+                </tr>
+            </thead>
+            <tbody>
+            <!-- take data from Records table -->
+                <% if ( CbyW!= null ) { %>
+                    <% CbyW.forEach(function(record) {  %>
+                        <tr value="<%= record.Day %>">
+                            <td>
+                                <%= record.Day %>
+                            </td>
+                            <td>
+                                <%= record.Sum %>
+                            </td>
+                        </tr>
+                    <% }) %>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+</div>
