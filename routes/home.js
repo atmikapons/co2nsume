@@ -27,10 +27,10 @@ var router = function (app, db) {
 		response.end();
 	});
 
-    //Click store button, go to store page (store.ejs)
-    app.get('/store', function(request, response) {
+    //Click food log button, go to food log page (foodlog.ejs)
+    app.get('/foodlog', function(request, response) {
 		if (request.session.loggedin) {
-			response.render('pages/store');
+			response.render('pages/foodlog');
 		} else {
 			response.send('Please login to view this page!');
 		}
