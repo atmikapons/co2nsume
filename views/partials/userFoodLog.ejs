@@ -1,0 +1,40 @@
+
+<div id = "userFoodLog-collapse" class="collapse">
+    <div class="card-body">
+        
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+       
+
+        <!-- Table -->
+        <table id = "userFoodLog-table" class = "table table-bordered" align="center">
+            <thead>
+                <tr>
+                    <!-- table headings -->
+                    <th class="text">Date</th>
+                    <th class="text">Food</th>
+                    <th class="text">Carbon Emissions</th>
+                </tr>
+            </thead>
+            <tbody>
+            <!-- take data from Records table -->
+                <% if ( fL!= null ) { %>
+                    <% fL.forEach(function(record) {  %>
+                        <tr value="<%= record.Day %>">
+                            <td>
+                                <%= record.Day %>
+                            </td>
+                            <td>
+                                <%= record.Food %>
+                            </td>
+                            <td>
+                                <%= record.Carbon_Emissions %>
+                            </td>
+                        </tr>
+                    <% }) %>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -30,11 +30,26 @@ var router = function (app, db) {
     //Click food log button, go to food log page (foodlog.ejs)
     app.get('/foodlog', function(request, response) {
 		if (request.session.loggedin) {
-			response.render('pages/foodlog');
+			const userFoodLog = new Promise(function(resolve, reject) {
+				db.query('SELECT CONVERT(DATE_FORMAT(Timestamp,"%m/%d"),CHAR) AS `Day`, `Food_Recognized` AS `Food`, `Carbon_Sum` AS `Carbon_Emissions` FROM `Food Log` WHERE username="'+request.session.username+'" ORDER BY Day DESC', function (err, rows) {
+					if (err) {
+						resolve(null); 
+					} 
+					else {
+						resolve(rows);
+					}
+				});
+			});
+			userFoodLog.then(function(rows){
+				console.log(rows);
+				response.render('pages/foodlog', {fL:rows});
+				response.end();
+			});
 		} else {
 			response.send('Please login to view this page!');
+			response.end(); //must be in the else bc "cannot set headers after sent to client"
 		}
-		response.end();
+		
 	});
 
     //Click stats button, go to stats page (stats.ejs)
