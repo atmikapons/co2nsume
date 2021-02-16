@@ -1,9 +1,11 @@
 const express = require('express');
 const mysql = require('mysql');
+const https = require('https');
 const http = require('http');
 const path = require('path');
 const app = express();
 const bodyParser = require('body-parser');
+const fs = require('fs');
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
@@ -35,9 +37,17 @@ const routes2 = require('./routes/login.js')(app,db); //for extra routing js fil
 const routes3 = require('./routes/signup.js')(app, db); //for extra routing js files (signup)
 const routes4 = require('./routes/home.js')(app, db); //for extra routing js files (home)
 
+const options = {
+    key: fs.readFileSync('key.pem'),
+    cert: fs.readFileSync('cert.pem')
+  };
+
 
 const httpServer = http.createServer(app);
-httpServer.listen(8080); // can change port
+httpServer.listen(8000); // port for http server
+
+const httpsServer = https.createServer(options, app);
+httpsServer.listen(8080); // port for https server
 
 module.exports = app; // can be useful when testing
 module.exports.dbName=db; //for extra routing js files (login)
