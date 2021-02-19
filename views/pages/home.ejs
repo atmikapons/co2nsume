@@ -2,25 +2,31 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Home Page</title>
+		<meta name="viewport" content="width=500" />
+		<title>CO2nsume</title>
+		<!-- <link rel="icon" type="image/png" href="/public/icons/orange.png">
+		<link rel="stylesheet" href="/public/css/styles.css"> -->
 		<link rel="icon" type="image/png" href="/icons/orange.png">
 		<link rel="stylesheet" href="/css/styles.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
 	</head>
 	<body>
 		<div class="container">
-			
-			<h1home>Welcome Back</h1home>
-			<div class="home">
-					<a href="/menu" style="background-color: rgb(255, 140, 125);">Dining Hall Menu</a> 
-					<a href="/foodlog" style="background-color: rgb(255, 140, 125);">Food Log</a>
-					<a href="/stats" style="background-color: rgb(255, 140, 125);">Statistics</a>
-					<a href="/upload"  style="background-color: rgb(255, 140, 125);">Camera</a>
-					<a href="/info" style="background-color: rgb(255, 140, 125);">Info</a>
-					<a href="/points"  style="background-color: rgb(255, 140, 125);">Points</a>
-			</div>
 			<div class="logout">
-				<a href="/logout"  style="background-color: rgb(255, 140, 125);">Logout</a>
-			</div> 
+				<a href="/logout" class="icon" title="Logout"><i class="material-icons">logout</i></a>
+				<a href="/info" class="icon info" title="More Info"><i class="material-icons inactive">help_outline</i></a>
+			</div>
+			<h1 class="home">Welcome Back</h1>
+			 
+			<div class="tray">
+					<a href="/menu" class="icon" title="Dining Hall Menu"><i class="material-icons inactive">restaurant_menu</i></a> 
+					<a href="/foodlog" class="icon" title="Food Log"><i class="material-icons">receipt_long</i></a>
+					<a href="/upload" class="icon cam-bubble" title="Camera"><i class="material-icons cam">camera_alt</i></a>
+					<a href="/stats" class="icon" title="Statistics"><i class="material-icons">analytics</i></a>
+					<a href="/points" class="icon" title="Points"><i class="material-icons inactive">monetization_on
+					</i></a>
+			</div>
+			
 		</div>
 	</body>
 </html>

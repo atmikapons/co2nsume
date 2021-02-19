@@ -41,9 +41,13 @@ h1{
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  width: 100vw;
+
+  width: 500px;
+  max-width: 100%;
+  height: 100%;
+
+  
   padding:10px;
-  height: 100vh;
   background-color: var(--white);
   
   text-align: center;
@@ -53,20 +57,21 @@ h1{
 
 .logo{
   margin: auto;
-  margin-top: 0px;
+  margin-top: 60px;
   margin-bottom: 10px;
 }
 
 .button{
   background-color: var(--button);
   border: 0px;
-  padding: 10px;
+  padding: 15px;
   margin-top: 20px;
-  border-radius: 12px;
+  border-radius: 15px;
   color: var(--white);
   text-decoration: none;
   cursor: grab;
-  font-size: 12px;
+  font-size: x-large;
+  min-width: max-content;
 }
 
 .button:hover{
@@ -82,12 +87,23 @@ h1{
   left: 20px;
 }
 
-.back:hover{
-  color: var(--containershadow);
+.icon{
+  padding: 10px;
+  color: var(--button);
+  border-radius: 12px;
 }
 
 .material-icons{
   margin: 5px;
+  color: var(--button);
+}
+
+.material-icons.inactive{
+  color: var(--offwhite);
+}
+
+.material-icons:hover{
+  color: var(--containershadow);
 }
 
 fieldset{
@@ -100,12 +116,13 @@ fieldset{
 }
 
 input[type=text], input[type=password] {
-  padding:10px;
-  margin: 10px;
+  padding:15px;
+  margin: 20px;
   border:0;
   border-radius: 12px;
   box-shadow:0 0 5px 4px rgba(0,0,0,0.06);
   width: 100%;
+  font-size: x-large;
 }
 
 ::placeholder{
@@ -113,12 +130,22 @@ input[type=text], input[type=password] {
 }
 
 /* LOGIN */
+
+.login{
+  width: 75%;
+}
+
 .login-form{
-  margin-bottom: 20px; 
+  margin-bottom: 30px; 
 } 
+
+.loginb{
+  width: 32%;
+}
 
 .signup{
   background-color: #8ac926;
+  width: 20%;
 }
 
 /* UPLOAD */
@@ -172,84 +199,63 @@ input[type=text], input[type=password] {
 }
 
 /* HOME */
-
-h1home{
-  color: var(--text);
-  font-size: 42px;
-  font-weight: 300;
-  /* margin: auto; */
-  /* margin-left: -400px; */
-  margin-top: -200px;
-  margin-bottom: 50px;
+.logout{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-.home {
-  width: 400px;
-  overflow-y: auto;
-  margin-left: 75px;
-}
-
-.home > a {
-  width: 75px;
-  height: 50px;
-  float: left;
-  border: 0px;
-  padding: 15px;
-  margin: auto;
-  border-radius: 10px;
-  color: var(--white);
-  text-decoration: none;
-  cursor: grab;
-}
-
-.logout > a {
-  width: 50px;
-  height: 25px;
-  float: left;
-  border: 0px;
-  padding: 15px;
-  /* margin: auto; */
+h1.home{
   margin-top: 200px;
-  border-radius: 10px;
-  color: var(--white);
-  text-decoration: none;
-  cursor: grab;
+  margin-bottom: 0px;
+}
+
+.tray {
+  width: 75%;
+  margin: auto;
+  margin-top: 300px;
+  border-radius: 50px;
+  padding: 0px;
+  background-color: #eff2fa;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 3px 7px #b6bdb2;
+}
+
+.icon.cam-bubble{
+  background-color: #cfd9f1;
+  border-radius: 50%;
+}
+.icon.cam-bubble:hover{
+  background-color: #91aceb;
+}
+
+.material-icons.cam{
+  font-size: 48px;
 }
 
 /* MEDIA QUERIES */ 
-@media screen and (min-width:600px){
+@media only screen and (min-width:500px){
     .container{
-        width:40vw;
-        min-width: 600px;
-        max-height: 95vh;
-        min-height: 715px;
-        border-radius: 12px;
-        
+      width: 550px;
+      height: 95vh;
+      min-height: 715px;
+      border-radius: 12px; 
+    }
+    #errorMsg {
+      position: fixed;
+      top: 32vh;
+      left: 20vw;
+      padding: 20px;
+      z-index: 999999;
+    }
+    .form-control.webcam-on {
+      top: 17vh;
+      left: 0;
     }
 } 
-
-@media screen and (min-width: 768px) {
-    #errorMsg {
-        position: fixed;
-        top: 32vh;
-        left: 20vw;
-        padding: 20px;
-        z-index: 999999;
-    }
- }
-
-@media screen and (max-width: 767px) {
-  .cameraControls {
-    bottom: 25vh;
-  }
-}
-
-@media screen and (min-width: 420px) and (max-width: 767px) {
-  .form-control.webcam-on {
-    top: 17vh;
-    left: 0;
-  }
-}
 
 @media screen and (min-width: 1024px) {
   .form-control.webcam-on {

@@ -2,22 +2,25 @@
 <html>
 	<head>
 		<meta charset="utf-8">
+		<meta name="viewport" content="width=500" />
 		<title>CO2nsume</title>
 		<link rel="icon" type="image/png" href="/icons/orange.png">
 		<link rel="stylesheet" href="/css/styles.css">
 	</head>
 	<body>
 		<div class="container">
-			<img class="logo" src="/icons/logo.png" height="80px">
+			<img class="logo" src="/icons/logo.png" height="75px">
 			<div class="login">
 				<form class="login-form" action="auth" method="POST">
 					<fieldset>
 						<input class="login-text" type="text" name="username" placeholder="Username" required>
 						<input class="login-text" type="password" name="password" placeholder="Password" required>
 						<input class="button loginb" type="submit" value="Log In">
+						<a class="button signup" href="/signup">Sign Up</a>
 					</fieldset>
+					
 				</form>
-				<a class="button signup" href="/signup">Sign Up</a>
+				
 			</div>
 				
 
