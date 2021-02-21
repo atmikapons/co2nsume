@@ -8,7 +8,7 @@
        
 
         <!-- Table -->
-        <table id = "userFoodLog-table" class = "table table-bordered" align="center">
+        <table id = "userFoodLog-table" class = "table" align="center">
             <thead>
                 <tr>
                     <!-- table headings -->
@@ -25,11 +25,11 @@
                             <td>
                                 <%= record.Day %>
                             </td>
-                            <td>
+                            <td id="food">
                                 <%= record.Food %>
                             </td>
                             <td>
-                                <%= record.Carbon_Emissions %>
+                                <%= record.Carbon_Emissions %> kg
                             </td>
                         </tr>
                     <% }) %>

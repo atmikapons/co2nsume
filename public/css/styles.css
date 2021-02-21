@@ -16,51 +16,40 @@
 *, *:before, *:after {
   box-sizing: border-box;
 }
-
 html, body{
     height: 100%;
     background-image: linear-gradient(to top right,var(--offwhite),var(--offwhite));
     font-family: 'Noto Sans JP', sans-serif;
 }
-
 h1{
     color: var(--textshadow);
     font-size: 28px;
     font-weight: 300;
 }
-
 .container{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   margin: 0;
   position: absolute;
   top: 50%;
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-
   width: 500px;
   max-width: 100%;
   height: 100%;
-
-  
   padding:10px;
   background-color: var(--white);
-  
   text-align: center;
   box-shadow: 0px 15px 35px var(--containershadow);
-
 }
-
 .logo{
   margin: auto;
   margin-top: 60px;
   margin-bottom: 10px;
 }
-
 .button{
   background-color: var(--button);
   border: 0px;
@@ -73,11 +62,9 @@ h1{
   font-size: x-large;
   min-width: max-content;
 }
-
 .button:hover{
   background-color: var(--containershadow);
 }
-
 .back{
   padding: 0px;
   color: var(--offwhite);
@@ -86,22 +73,18 @@ h1{
   top: 20px;
   left: 20px;
 }
-
 .icon{
   padding: 10px;
   color: var(--button);
   border-radius: 12px;
 }
-
 .material-icons{
   margin: 5px;
   color: var(--button);
 }
-
 .material-icons.inactive{
   color: var(--offwhite);
 }
-
 .material-icons:hover{
   color: var(--containershadow);
 }
@@ -114,7 +97,6 @@ fieldset{
   width: 100%;
   border: 0;
 }
-
 input[type=text], input[type=password] {
   padding:15px;
   margin: 20px;
@@ -124,25 +106,20 @@ input[type=text], input[type=password] {
   width: 100%;
   font-size: x-large;
 }
-
 ::placeholder{
   opacity: 0.6;
 }
 
 /* LOGIN */
-
 .login{
   width: 75%;
 }
-
 .login-form{
   margin-bottom: 30px; 
 } 
-
 .loginb{
   width: 32%;
 }
-
 .signup{
   background-color: #8ac926;
   width: 20%;
@@ -152,7 +129,6 @@ input[type=text], input[type=password] {
 .captured{
   width: 80%;
 }
-
 .cameraControls {
   display: flex;
   flex-direction: column;
@@ -161,12 +137,10 @@ input[type=text], input[type=password] {
   width: 25%;
   margin: auto;
 }
-
 .upload{
   margin: auto;
   margin-top: 10px;
 }
-
 .retakephoto{
   margin-top: 130px;
 }
@@ -181,7 +155,6 @@ input[type=text], input[type=password] {
     background-image: linear-gradient(to top right,var(--button),var(--buttonshadow));
     border-radius: 1.5em;
 }
-
 .progressBar::before {
     content: '';
     display: flex;
@@ -200,21 +173,20 @@ input[type=text], input[type=password] {
 
 /* HOME */
 .logout{
+  margin-top: 0px;
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-
 h1.home{
   margin-top: 200px;
   margin-bottom: 0px;
 }
-
 .tray {
   width: 75%;
   margin: auto;
-  margin-top: 300px;
+  margin-bottom: 30px;
   border-radius: 50px;
   padding: 0px;
   background-color: #eff2fa;
@@ -223,7 +195,6 @@ h1.home{
   align-items: center;
   box-shadow: 0 3px 7px #b6bdb2;
 }
-
 .icon.cam-bubble{
   background-color: #cfd9f1;
   border-radius: 50%;
@@ -231,9 +202,34 @@ h1.home{
 .icon.cam-bubble:hover{
   background-color: #91aceb;
 }
-
 .material-icons.cam{
   font-size: 48px;
+}
+
+/* FOOD LOG */
+th{
+  color: #8ac926;
+  text-decoration: underline;
+}
+table tr{
+  border-radius: 50%;
+}
+table td{
+  padding: 5px;
+}
+table td#food{
+  padding: 10px;
+}
+table tr:nth-child(even){
+  background-color: #f2f2f2;
+}
+table{
+  table-layout: auto;
+}
+
+/* STATS */
+#byWeek-table{
+  margin-top: 30px;
 }
 
 /* MEDIA QUERIES */ 
