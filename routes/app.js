@@ -138,8 +138,8 @@ var router = function (app, db) {
                 if(err) resolve(0);
                 else {
                      //console.log("query done");
-                     //console.log("query result: " + result[0][0].kg_carbon_per_item);
-                    resolve(result[0][0].kg_carbon_per_item);
+                     //console.log("query result: " + result[0][0].g_carbon_per_item);
+                    resolve(result[0][0].g_carbon_per_item);
                 }
               }
             );

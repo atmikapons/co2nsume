@@ -210,12 +210,14 @@ h1.home{
 th{
   color: #8ac926;
   text-decoration: underline;
+  width:100px
 }
 table tr{
   border-radius: 50%;
 }
 table td{
   padding: 5px;
+  width:100px
 }
 table td#food{
   padding: 10px;
@@ -225,6 +227,14 @@ table tr:nth-child(even){
 }
 table{
   table-layout: auto;
+}
+thead,
+tbody {
+  display: block;
+}
+tbody {
+  max-height: 400px;
+  overflow: auto;
 }
 
 /* STATS */
