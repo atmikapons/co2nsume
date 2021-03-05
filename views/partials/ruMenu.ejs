@@ -1,0 +1,51 @@
+<div id = "ruMenu-collapse" class="collapse">
+    <div class="card-body">
+        
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+       
+
+        <!-- Table -->
+        <table id = "ruMenu-table" class = "table" align="center">
+            <thead>
+                <tr>
+                    <!-- table headings -->
+                    <th class="text">Date</th>
+                    <th class="text">Dining Hall</th>
+                    <th class="text">Meal Type</th>
+                    <th class="text">Meal</th>
+                    <th class="text">Serving Size</th>
+                    <th class="text">Calories</th>
+                </tr>
+            </thead>
+            <tbody>
+            <!-- take data from Records table -->
+                <% if ( rM!= null ) { %>
+                    <% rM.forEach(function(record) {  %>
+                        <tr value="<%= record.Day %>">
+                            <td>
+                                <%= record.Day %>
+                            </td>
+                            <td>
+                                <%= record.Dining_Hall %>
+                            </td>
+                            <td>
+                                <%= record.Meal_Type %>
+                            </td>
+                            <td>
+                                <%= record.Meal %>
+                            </td>
+                            <td>
+                                <%= record.Serving_Size %>
+                            </td>
+                            <td>
+                                <%= record.Meal_Calories %>
+                            </td>
+                        </tr>
+                    <% }) %>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+</div>

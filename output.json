@@ -1,0 +1,670 @@
+{
+ "Brower Commons": [
+  {
+   "meal_name": "Breakfast",
+   "genres": []
+  },
+  {
+   "meal_name": "Lunch",
+   "genres": []
+  },
+  {
+   "meal_name": "Dinner",
+   "genres": []
+  },
+  {
+   "meal_name": "Knight Room",
+   "genres": []
+  }
+ ],
+ "Livingston Dining Commons": [
+  {
+   "meal_name": "Breakfast",
+   "genres": []
+  },
+  {
+   "meal_name": "Lunch",
+   "genres": []
+  },
+  {
+   "meal_name": "Dinner",
+   "genres": []
+  },
+  {
+   "meal_name": "Knight Room",
+   "genres": []
+  }
+ ],
+ "Busch Dining Hall": [
+  {
+   "meal_name": "Breakfast",
+   "genres": [
+    {
+     "genre_name": "BREAKFAST MEATS",
+     "items": [
+      {
+       "name": "SLICED BACON",
+       "serving": "3 SLICE",
+       "calories": 425,
+       "ingredients": [
+        "BACON LAYOUT 16/18 * 15LBS (PORK BACON CURED WITH WATER, SALT, SUGAR, SODIUM PHOSPHATE, LIQUID SMOKE, SODIUM ERYTHORBATE, SODIUM NITRITE.)"
+       ]
+      },
+      {
+       "name": "VEGETARIAN BREAKFAST PATTIES",
+       "serving": "2 EACH",
+       "calories": 140,
+       "ingredients": [
+        "VEGAN BREAKFAST PATTY SAUS'AGE (WATER, SOY PROTEIN CONCENTRATE, CANOLA OIL, VITAL WHEAT GLUTEN, SOY PROTEIN ISOLATE, YEAST EXTRACT, CONTAINS 2% OR LESS OF METHYLCELLULOSE, ORGANIC CANE SUGAR, POTATO STARCH, SEA SALT, SPICES, SALT, NATURAL FLAVORS, ORGANIC CARAMEL COLOR, ONION POWDER, MALT EXTRACT (MALTED BARLEY, WATER)",
+        "GARLIC POWDER",
+        "CANE SUGAR.)"
+       ]
+      }
+     ]
+    },
+    {
+     "genre_name": "BREAKFAST ENTREES",
+     "items": [
+      {
+       "name": "HARD BOILED EGGS",
+       "serving": "1 EACH",
+       "calories": 76,
+       "ingredients": [
+        "EGGS FRESH LARGE 30 DZ",
+        "WATER FRESH",
+        "SALT"
+       ]
+      },
+      {
+       "name": "OMELETS MADE TO ORDER",
+       "serving": "6 OZ",
+       "calories": 415,
+       "ingredients": [
+        "BACON LAYOUT 16/18 * 15LBS (PORK BACON CURED WITH WATER, SALT, SUGAR, SODIUM PHOSPHATE, LIQUID SMOKE, SODIUM ERYTHORBATE, SODIUM NITRITE.)",
+        "EGG WHITES 15/2lbs CAGE FREE (EGG WHITES, GUAR GUM, TRIETHYL CITRATE (ADDED AS WHIPPING AID))",
+        "SAUCE SALSA THICK AND CHUNKY (TOMATOES, WATER, JALAPENO PEPPERS, TOMATO PASTE, ONIONS, DRIED ONION, SALT, DISTILLED VINEGAR, DRIED GARLIC, NATURAL FLAVOR)",
+        "CHEESE CHEDDAR SHREDDED (PASTEURIZED MILK, CHEESE CULTURE, SALT, ENZYMES, ANNATTO COLORING, POTATO STARCH, CORN STARCH, DEXTROSE, CALCIUM SULFATE)",
+        "THUMANN SAUSAGE CRUMBLES (PORK, WATER, SALT, DEXTROSE, ISOLATED SOY PROTEIN, FLAVORINGS, PAPRIKA, BHA, CITRIC ACID.)",
+        "PRD BROCCOLI FLORETTES 4/3#",
+        "PRD MUSHROOM 10# 1\"-1.5\" DIAM",
+        "CHEESE MOZZ SHRED RUTGERS BLEND (LOW MOISTURE WHOLE MILK MOZZARELLA, PROVOLONE CHEESE (PASTEURIZED MILK, CHEESE CULTURES, SALT, ENZYMES)",
+        "POWDERED CELLULOSE (TO PREVENT CAKING)",
+        "POTASSIUM SORBATE AND NATAMYCIN.)",
+        "TURKEY CATERING BREAST S/OFF  (TURKEY BREAST, WATER, CONTAINS 2% OR LESS OF DEXTROSE, SALT, CARRAGEENAN, SODIUM PHOSPHATE.)",
+        "PRD PEPPER RED * AVG 22/25#",
+        "HAM BOILED ASSOLUTTI (IMPORTED HAM, WATER ADDED. CURED WITH WATER, SALT, DEXTROSE, POTASSIUM LACTATE, SODIUM PHOSPHATE, SODIUM DIACETATE,  SODIUM ASCORBATE, SODIUM NITRITE.)",
+        "PRD PEPPER GREEN MED avg 22#",
+        "PRD ONION SPANISH DRY",
+        "PRD TOMATO LARGE (6x6)",
+        "PRD ASPARAGUS GREEN 11LB",
+        "FISH SALMON SMOKED LOX (FARM RAISED ATLANTIC SALMON, SALT, BROWN SUGAR, AND NATURAL OAKWOOD SMOKE.)",
+        "VEGAN BUTTER ALTERNATIVE (SOYBEAN OIL, HYDROGENATED SOYBEAN OIL, SALT, SOY LECITHIN, TBHQ AND CITRIC ACID ADDED TO HELP PRESERVE FRESHNESS, NATURAL AND ARTIFICIAL FLAVOR, BETA-CAROTENE (COLOR)",
+        "DIMETHYLPOLYSILOXANE)"
+       ]
+      }
+     ]
+    },
+    {
+     "genre_name": "BREAKFAST BAKERY",
+     "items": [
+      {
+       "name": "AORTED DONUTS"
+      },
+      {
+       "name": "BAGEL WEEKEND ASSORTMENT",
+       "serving": "1 EACH",
+       "calories": 353,
+       "ingredients": [
+        "BAGEL REG ASSORTMENT"
+       ]
+      }
+     ]
+    },
+    {
+     "genre_name": "BREAKFAST MISC",
+     "items": [
+      {
+       "name": "FRESH FRUIT CUP",
+       "serving": "1 EACH",
+       "calories": 143,
+       "ingredients": [
+        "FRU PRD PINEAPPLE CUT FRSH",
+        "FRU PRD STRAWBERRIES",
+        "FRU PRD BLUEBERRIES FLAT"
+       ]
+      },
+      {
+       "name": "YOGURT PARFAIT",
+       "serving": "12 OZ",
+       "calories": 513,
+       "ingredients": [
+        "YOGURT PARFAIT VANILLA LOWFAT",
+        "YOGURT PARFAIT STRAWBERRY LOWFAT",
+        "FRU PRD BLUEBERRIES FLAT",
+        "FRU PRD STRAWBERRIES",
+        "CEREAL GRANOLA BULK NATURE VALL"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "meal_name": "Lunch",
+   "genres": [
+    {
+     "genre_name": "SOUPS",
+     "items": [
+      {
+       "name": "ITALIAN VEGETABLE  SOUP",
+       "serving": "6 OZ",
+       "calories": 129,
+       "ingredients": [
+        "BASE VEGETABLE LOW SODIUM",
+        "VEG TOMATO CRUSHED SCLAFANI (TOMATOES, SALT)",
+        "PRD POTATO CHEF",
+        "PRD ONION SPANISH DRY",
+        "PRD CARROT",
+        "PASTA BARILLA DITALINI (SEMOLINA (WHEAT)",
+        "DURUM WHEAT FLOUR THIS PRODUCT MANUFACTURED ON EQUIPMENT THAT PROCESSES PRODUCTS CONTAINING EGGS.)",
+        "VEG FRZ SPINACH CHOPPED 36#",
+        "PRD CABBAGE GREEN",
+        "PRD CELERY PASCAL",
+        "VEG BEANS CHICK PEAS",
+        "VEG DRY BEANS NAVY",
+        "OIL WESSON CANOLA 4/1GAL",
+        "SALT",
+        "SAUCE SMOKE LIQUID HICKORY (WATER, NATURAL HICKORY SMOKE FLAVOR)",
+        "PRD GARLIC PEELED FRESH GAL",
+        "BLACK PEPPER",
+        "THYME LEAVES"
+       ]
+      },
+      {
+       "name": "LOBSTER BISQUE  5 STAR",
+       "serving": "6 OZ",
+       "calories": 358,
+       "ingredients": [
+        "MILK LIGHT CREAM  1/2 GAL",
+        "FRZ FISH CRAWFISH TAIL MEAT",
+        "FRZ FISH LANGOSTINO",
+        "MILK WHOLE 5GAL",
+        "BUTTER PRINT SOLIDS 36/1lb",
+        "FLOUR ALL PURPOSE (BLEACHED WHEAT FLOUR, NIACIN (A B VITAMIN)",
+        "IRON",
+        "THIAMINE MONONITRATE (VITAMIN B1)",
+        "RIBOFLAVIN (VITAMIN B2)",
+        "ENZYMES",
+        "FOLIC ACID (A B VITAMIN))",
+        "PRD CELERY PASCAL",
+        "PRD ONION SPANISH DRY",
+        "SPIRIT BRANDY 750ml",
+        "BASE LOBSTER (COOKED LOBSTER MEAT, SALT, SUGAR, POTATO FLOUR, HYDROLYZED WHEAT PROTEIN, DEXTROSE, ONION POWDER, NATURAL LOBSTER FLAVOR, YEAST EXTRACT, MALTODEXTRIN, CITRIC ACID, SPICES, GARLIC POWDER, DISODIUM INOSINATE, DISODIUM GUANYLATE, SUNFLOWER OIL, NATURAL FLAVOR, AND XANTHAN GUM)",
+        "SPANISH PAPRIKA",
+        "BAY LEAF"
+       ]
+      }
+     ]
+    },
+    {
+     "genre_name": "ENTREES",
+     "items": [
+      {
+       "name": "CHICKEN FINGERS",
+       "serving": "5 OZ",
+       "calories": 246,
+       "ingredients": [
+        "FRZ CHICKEN BRD TENDER SIZED (PORTIONED CHICKEN TENDERS WITH RIB MEAT CONTAINING: UP TO 12% OF A SOLUTION OF WATER, SALT, SODIUM PHOSPHATES, MODIFIED FOOD STARCH. BREADED WITH: BLEACHED WHEAT FLOUR, WHEAT FLOUR, WATER, CONTAINS 2% OR LESS OF THE FOLLOWING: AUTOLYZED YEAST EXTRACT, DEXTROSE, DRIED YEAST, DISODIUM INOSINATE AND DISODIUM GUANYLATE, LEAVENING (SODIUM BICARBONATE, SODIUM ACID PYROPHOSPHATE, SODIUM ALUMINUM PHOSPHATE, MONOCALCIUM PHOSPHATE)",
+        "SALT",
+        "SOYBEAN OIL",
+        "SPICES",
+        "SPICE EXTRACTIVE",
+        "WHEAT GLUTEN. BREADING SET IN VEGETABLE OIL.)"
+       ]
+      },
+      {
+       "name": "CLASSIC EGGPLANT ROLLATINI",
+       "serving": "2 EACH",
+       "calories": 331,
+       "ingredients": [
+        "FRZ VEG EGGPLANT ROLLATA",
+        "SAUCE SPAGHETTI SCLAFANI (TOMATO CONCENTRATE (WATER, CRUSHED TOMATOES)",
+        "CORN OIL",
+        "SALT",
+        "SPICES",
+        "AND NATURAL FLAVORS.)"
+       ]
+      },
+      {
+       "name": "GRILLED CHICKEN BREAST 4OZ",
+       "serving": "4 OZ",
+       "calories": 151,
+       "ingredients": [
+        "CHICKEN CUTLET 4oz OFF/SK FRSH",
+        "VINEGAR CIDER",
+        "OIL WESSON CANOLA 4/1GAL",
+        "PRD GARLIC PEELED FRESH GAL"
+       ]
+      },
+      {
+       "name": "GRILLED SALMON",
+       "serving": "1 EACH",
+       "calories": 178,
+       "ingredients": [
+        "FISH SALMON FLT S/OFF 4oz",
+        "BASIC SEASONING FOR GRILL ITEM (GRANULATED GARLIC, SALT, BLACK PEPPER)",
+        "OIL OLIVE PURE"
+       ]
+      },
+      {
+       "name": "MEDITERRANEAN STUFFED ZUCCHINI BOATS",
+       "serving": "1 SLICE",
+       "calories": 199,
+       "ingredients": [
+        "WATER FRESH",
+        "PRD SQUASH ZUCCHINI 20#(green, PRD CAULIFLOWER, PASTA COUS COUS, PRD TOMATO SUN DRIED 5#, PRD PEPPER RED * AVG 22/25#, OLIVE GREEK KALAMATA PITTED, BASE VEGETABLE *GOLDEN* RC (SALT, DEHYDRATED VEGETABLES (ONION, TOMATO, CARROT, CELERY, BELL PEPPER, CARROT JUICE, GREEN LEEK)",
+        "SUGAR",
+        "AUTOLYZED YEAST EXTRACT",
+        "MALTODEXTRIN",
+        "PALM OIL",
+        "GARLIC POWDER",
+        "SPICES",
+        "DISODIUM INOSINATE",
+        "DISODIUM GUANYLATE",
+        "TURMERIC EXTRACT (COLOR)",
+        "AND NATURAL FLAVORS.)",
+        "OIL OLIVE 25%/75%",
+        "PRD GARLIC PEELED FRESH GAL",
+        "BLACK PEPPER",
+        "SALT",
+        "HERB FRESH OREGANO",
+        "HERB FRESH THYME"
+       ]
+      },
+      {
+       "name": "SHRIMP & SCALLOP STIR FRY",
+       "serving": "6 OZ",
+       "calories": 166,
+       "ingredients": [
+        "PRD BROCCOLI FLORETTES 4/3#",
+        "FISH SCALLOP BAY IQF WET",
+        "FRZ FISH SHRIMP LG PDI 41-50CT T/OFF",
+        "VEG BEANS SPROUT (BEAN SPROUTS, WATER, SALT, ASCORBIC ACID, CITRIC ACID)",
+        "PRD ONION SPANISH DRY",
+        "PRD MUSHROOM ENOKI",
+        "VEG WATER CHESTNUTS SLICED (WATER CHESTNUTS, WATER, CITRIC ACID)",
+        "PRD CARROT",
+        "OIL WESSON CANOLA 4/1GAL",
+        "SAUCE ASIAN MENU  BROWN (SOY SAUCE (WATER, WHEAT, SOYBEANS, SALT)",
+        "SUGAR",
+        "WATER",
+        "ONIONS",
+        "CORN STARCH",
+        "XANTHAN GUM",
+        "CITRIC ACID",
+        "GARLIC PUREE (DEHYDRATED GARLIC, WATER)",
+        "ROASTED SESAME SEED OIL)",
+        "PRD GARLIC PEELED FRESH GAL"
+       ]
+      }
+     ]
+    },
+    {
+     "genre_name": "STARCH &  POTATOES",
+     "items": [
+      {
+       "name": "BAKED WHITE RICE",
+       "serving": "4 OZ",
+       "calories": 199,
+       "ingredients": [
+        "WATER FRESH",
+        "RICE WHITE-50 LB (ENRICHED LONG GRAIN PARBOILED RICE (LONG GRAIN RICE, IRON, FERRIC ORTHOPHOSPHATE)",
+        "THIAMINE MONONITRATE AND FOLATE)",
+        "SALT"
+       ]
+      },
+      {
+       "name": "FRENCH FRIES",
+       "serving": "4 OZ",
+       "calories": 217,
+       "ingredients": [
+        "POTATO FRIES REG 5/16\"",
+        "FRYING OIL (EXPELLER PRESSED CANOLA OIL)"
+       ]
+      }
+     ]
+    },
+    {
+     "genre_name": "VEGGIES",
+     "items": [
+      {
+       "name": "ZUCCHINI & YELLOW SQ W/ RED P",
+       "serving": "4 OZ",
+       "calories": 66,
+       "ingredients": [
+        "PRD SQUASH ZUCCHINI 20#",
+        "green",
+        "PRD PEPPER RED * AVG 22/25#",
+        "PRD ONION SPANISH DRY",
+        "OIL OLIVE 25%/75%",
+        "PRD GARLIC PEELED FRESH GAL",
+        "OREGANO LEAVES",
+        "KOSHER SALT",
+        "WHITE GROUND PEPPER"
+       ]
+      }
+     ]
+    },
+    {
+     "genre_name": "BAKERY MISC",
+     "items": [
+      {
+       "name": "CLUB ROLL 6\" SLICED",
+       "serving": "1 EACH",
+       "calories": 400,
+       "ingredients": [
+        "ROLL CLUB 6\" SLICED 3-CUT (UNBLEACHED UNBROMATED WHEAT FLOUR, SHORTENING (PALM OIL AND COTTONSEED OIL)",
+        "KWICK SPONGE (WHEY, CORN FLOUR, L-CYSTEINE, POTASSIUM BROMATE)",
+        "NATURELL FORTE DB100 (WHEAT FLOUR, BARLEY FLOUR, SUNFLOWER LECITHIN, ASCORBIC ACID, ENZYMES)",
+        "SUGAR",
+        "SALT",
+        "YEAST",
+        "CORN MEAL",
+        ")"
+       ]
+      },
+      {
+       "name": "HAMBURGER BUN 4\"",
+       "serving": "1 EACH",
+       "calories": 120,
+       "ingredients": [
+        "ROLL ROCKLAND BURGER 4\" SEEDED"
+       ]
+      },
+      {
+       "name": "HOT DOG ROLL",
+       "serving": "1 EACH",
+       "calories": 123,
+       "ingredients": [
+        "ROLL ROCKLAND FRANKFURTER"
+       ]
+      }
+     ]
+    },
+    {
+     "genre_name": "COOK TO ORDER BAR",
+     "items": [
+      {
+       "name": "GREEN CURRIED MUSSELLS",
+       "serving": "5 OZ",
+       "calories": 689,
+       "ingredients": [
+        "FRZ FISH WHOLE MUSSEL IN SHELL",
+        "PASTE CURRY GREEN",
+        "WATER FRESH",
+        "COCONUT MILK * UNSWEETENED",
+        "PRD ONION GREEN SCALLION",
+        "FRU PRD LIMES",
+        "HERB FRESH BASIL THAI",
+        "SAUCE FISH",
+        "OIL WESSON CANOLA 4/1GAL",
+        "PRD CARROT",
+        "HERB FRESH CILANTRO BUNCH",
+        "PRD PEPPER RED HOT CHILI",
+        "PRD GARLIC PEELED FRESH GAL"
+       ]
+      },
+      {
+       "name": "LINGUINE  PASTA",
+       "serving": "6 OZ",
+       "calories": 206,
+       "ingredients": [
+        "WATER FRESH",
+        "PASTA BARILLA LINGUINE (SEMOLINA (WHEAT)",
+        "DURUM WHEAT FLOUR",
+        "VITAMINS/ MINERALS: VITAMIN B3 (NIACIN)",
+        "IRON (FERROUS SULFATE)",
+        "VITAMIN B1 (THIAMINE MONONITRATE)",
+        "VITAMIIN B2 (RIBOFLAVIN)",
+        "FOLIC ACID. MAY CONTAIN EGGS.)"
+       ]
+      },
+      {
+       "name": "MUSSELS IN WHITE SAUCE",
+       "serving": "3 OZ",
+       "calories": 321,
+       "ingredients": [
+        "FRZ FISH MUSSEL 1/2 SHELL GREEN LIP",
+        "WATER FRESH",
+        "BUTTER PRINT SOLIDS 36/1lb",
+        "WINE CHABLIS CAPRI 3L",
+        "FLOUR ALL PURPOSE (BLEACHED WHEAT FLOUR, NIACIN (A B VITAMIN)",
+        "IRON",
+        "THIAMINE MONONITRATE (VITAMIN B1)",
+        "RIBOFLAVIN (VITAMIN B2)",
+        "ENZYMES",
+        "FOLIC ACID (A B VITAMIN))",
+        "PRD ONION SPANISH DRY",
+        "BASE CLAM (COOKED CLAMS, SALT, SUGAR, CLAM FLAVOR (CONTAINS CLAM BROTH, SALT AND NATURAL FLAVOR)",
+        "WATER",
+        "POTATO FLOUR",
+        "HYDROLYZED WHEAT PROTEIN",
+        "ONION POWDER",
+        "MALTODEXTRIN",
+        "GARLIC POWDER",
+        "DISODIUM INOSINATE",
+        "DISODIUM GUANYLATE",
+        "SPICES",
+        "YEAST EXTRACT",
+        "SUNFLOWER OIL",
+        "SOY SAUCE (FERMENTED SOYBEANS, WHEAT AND SALT)",
+        "AND CITRIC ACID)",
+        "PRD GARLIC PEELED FRESH GAL",
+        "OREGANO LEAVES"
+       ]
+      },
+      {
+       "name": "MUSSELS MARINARA",
+       "serving": "3 OZ",
+       "calories": 186,
+       "ingredients": [
+        "MARINARA SAUCE (VEG TOMATO CRUSHED SCLAFANI (TOMATOES, SALT)",
+        "VEG TOMATO WHOLE PEELED ANGELA MIA (VINE- RIPENED TOMATOES, TOMATO JUICE, LESS THAN 2% CALCIUM CHLORIDE, CITRIC ACID)",
+        "PRD ONION SPANISH DRY",
+        "PRD GARLIC PEELED FRESH GAL",
+        "HERB FRESH BASIL BUNCH",
+        "OIL OLIVE PURE",
+        "SALT",
+        "BLACK PEPPER)",
+        "FRZ FISH WHOLE MUSSEL IN SHELL",
+        "CRUSHED RED PEPPER FLAKES"
+       ]
+      }
+     ]
+    },
+    {
+     "genre_name": "PIZZA/ PASTA",
+     "items": [
+      {
+       "name": "ALFREDO SAUCE",
+       "serving": "3 OZL",
+       "calories": 227,
+       "ingredients": [
+        "MILK LIGHT CREAM  1/2 GAL",
+        "CHEESE PARMESAN GRATED 12/1# (ITALIAN STYLE CHEESE (PASTEURIZED MILK, CHEESE CULTURE, SALT, ENZYMES)",
+        "PARMESAN CHEESE MADE FROM COW'S MILK",
+        "CHEESE CULTURE",
+        "SALT",
+        "ENZYMES",
+        "WHEY POWDER",
+        "POWDERED CELLULOSE ADDED TO PREVENT CAKING)",
+        "BUTTER PRINT SOLIDS 36/1lb",
+        "FLOUR ALL PURPOSE (BLEACHED WHEAT FLOUR, NIACIN (A B VITAMIN)",
+        "IRON",
+        "THIAMINE MONONITRATE (VITAMIN B1)",
+        "RIBOFLAVIN (VITAMIN B2)",
+        "ENZYMES",
+        "FOLIC ACID (A B VITAMIN))",
+        "WHITE GROUND PEPPER"
+       ]
+      },
+      {
+       "name": "MARINARA SAUCE",
+       "serving": "4 OZ",
+       "calories": 41,
+       "ingredients": [
+        "VEG TOMATO CRUSHED SCLAFANI (TOMATOES, SALT)",
+        "VEG TOMATO WHOLE PEELED ANGELA MIA (VINE- RIPENED TOMATOES, TOMATO JUICE, LESS THAN 2% CALCIUM CHLORIDE, CITRIC ACID)",
+        "PRD ONION SPANISH DRY",
+        "PRD GARLIC PEELED FRESH GAL",
+        "HERB FRESH BASIL BUNCH",
+        "OIL OLIVE PURE",
+        "SALT",
+        "BLACK PEPPER"
+       ]
+      },
+      {
+       "name": "MEATBALL PIZZA",
+       "serving": "1 SLICE",
+       "calories": 404,
+       "ingredients": [
+        "PIZZA SAUCE (VEG TOMATO CRUSHED SCLAFANI (TOMATOES, SALT)",
+        "OIL OLIVE 25%/75%",
+        "KOSHER SALT",
+        "PRD GARLIC PEELED FRESH GAL",
+        "OREGANO LEAVES)",
+        "PIZZA CRUST 16\"",
+        "CHEESE MOZZ SHRED RUTGERS BLEND (LOW MOISTURE WHOLE MILK MOZZARELLA, PROVOLONE CHEESE (PASTEURIZED MILK, CHEESE CULTURES, SALT, ENZYMES)",
+        "POWDERED CELLULOSE (TO PREVENT CAKING)",
+        "POTASSIUM SORBATE AND NATAMYCIN.)",
+        "FRZ MEATBALL 1oz (BEEF, MECHANICALLY SEPARATED CHICKEN, WATER, ROMANO CHEESE (PASTEURIZED SHEEP'S MILK, SALT AND RENNET, RICE FLOUR)",
+        "SOY PROTEIN CONCENTRATE",
+        "SEASONING (ROMANO POWDER ((PASTEURIZED MILK, SALT, CULTURE, ENZYME, DISODIUM PHOSPHATE)",
+        "WHEY POWDER",
+        "YEAST EXTRACT",
+        "LACTIC ACID",
+        "NATURAL AND ARTIFICIAL FLAVOR)",
+        "SALT",
+        "DRIED GARLIC",
+        "SPICES",
+        "PARSLEY FLAKES",
+        "BROWN SUGAR",
+        "CARAMEL COLOR",
+        "DISODIUM INOSINATE AND GUANYLATE",
+        "NOT MORE THAN 2% SILICON DIOXIDE)",
+        "BREADCRUMBS (UNBLEACHED WHEAT FLOUR, SALT, YEAST)",
+        "EGG WHITES",
+        "CONTAINS LESS THAN 2% OF THE FOLLOWING: RICOTTA CHEESE (WHOLE MILK, VINEGAR, SALT AND LOCUST BEAN GUM)",
+        "FLAVORING",
+        "SOY LECITHIN.)",
+        "OIL VEGALENE SPRAY ALLERGEN FREE PAM (SUNFLOWER OIL SUNFLOWER LECITHIN, NATURAL FLAVOR, AND PROPELLANT)"
+       ]
+      },
+      {
+       "name": "PIZZA PEPPER AND ONION",
+       "serving": "1 SLICE",
+       "calories": 340,
+       "ingredients": [
+        "PIZZA CRUST 16\"",
+        "SAUCE PREPARED PIZZA  SCALFANI",
+        "CHEESE MOZZ SHRED RUTGERS BLEND (LOW MOISTURE WHOLE MILK MOZZARELLA, PROVOLONE CHEESE (PASTEURIZED MILK, CHEESE CULTURES, SALT, ENZYMES)",
+        "POWDERED CELLULOSE (TO PREVENT CAKING)",
+        "POTASSIUM SORBATE AND NATAMYCIN.)",
+        "PRD ONION SPANISH DRY",
+        "PRD PEPPER RED * AVG 22/25#",
+        "PRD PEPPER GREEN MED avg 22#",
+        "OIL VEGALENE SPRAY ALLERGEN FREE PAM (SUNFLOWER OIL SUNFLOWER LECITHIN, NATURAL FLAVOR, AND PROPELLANT)"
+       ]
+      },
+      {
+       "name": "ROUND CHEESE PIZZA",
+       "serving": "1 EACH",
+       "calories": 1167,
+       "ingredients": [
+        "PIZZA SAUCE (VEG TOMATO CRUSHED SCLAFANI (TOMATOES, SALT)",
+        "OIL OLIVE 25%/75%",
+        "KOSHER SALT",
+        "PRD GARLIC PEELED FRESH GAL",
+        "OREGANO LEAVES)",
+        "PIZZA CRUST 12 \"",
+        "CHEESE MOZZ SHRED RUTGERS BLEND (LOW MOISTURE WHOLE MILK MOZZARELLA, PROVOLONE CHEESE (PASTEURIZED MILK, CHEESE CULTURES, SALT, ENZYMES)",
+        "POWDERED CELLULOSE (TO PREVENT CAKING)",
+        "POTASSIUM SORBATE AND NATAMYCIN.)",
+        "OIL VEGALENE SPRAY ALLERGEN FREE PAM (SUNFLOWER OIL SUNFLOWER LECITHIN, NATURAL FLAVOR, AND PROPELLANT)",
+        "OREGANO LEAVES",
+        "BASIL LEAF"
+       ]
+      },
+      {
+       "name": "ROUND PEPPERONI PIZZA",
+       "serving": "1 EACH",
+       "calories": 1165,
+       "ingredients": [
+        "PIZZA SAUCE (VEG TOMATO CRUSHED SCLAFANI (TOMATOES, SALT)",
+        "OIL OLIVE 25%/75%",
+        "KOSHER SALT",
+        "PRD GARLIC PEELED FRESH GAL",
+        "OREGANO LEAVES)",
+        "CHEESE MOZZ SHRED RUTGERS BLEND (LOW MOISTURE WHOLE MILK MOZZARELLA, PROVOLONE CHEESE (PASTEURIZED MILK, CHEESE CULTURES, SALT, ENZYMES)",
+        "POWDERED CELLULOSE (TO PREVENT CAKING)",
+        "POTASSIUM SORBATE AND NATAMYCIN.)",
+        "PEPPERONI SLICED PILLOW PACK (PORK, BEEF, CONTAINS LESS THAN 2% OR LESS OF WATER, DEXTROSE, SPICES, SODIUM ASCORBATE, FLAVORING, OLEORESIN OF PAPRIKA, LACTIC ACID STARTER CULTURE, GARLIC POWDER, SODIUM NITRITE, BHA, BHT, CITRIC ACID)",
+        "BASIL LEAF",
+        "OREGANO LEAVES"
+       ]
+      },
+      {
+       "name": "TORTELLINI PRIMA AIOLI",
+       "serving": "6 OZ",
+       "calories": 430,
+       "ingredients": [
+        "WATER FRESH",
+        "PASTA WHOLE WHEAT CHEESE TORTELLINI (DOUGH:  WATER, WHOLE WHEAT FLOUR, SEMOLINA, EGGS, MALTODEXTRIN FILLING: LOW FAT RICOTTA CHEESE (WHEY, MILK, VINEGAR, SALT, CARRAGEENAN, VITAMIN A PALMINATE)",
+        "BREAD CRUMBS (WHEAT FLOUR, DEXTROSE, YEAST, SALT)",
+        "ROMANO CHEESE (MILK, CHEESE CULTURES, SALT ENZYMES)",
+        "MALTODEXTRIN",
+        "LOW MOISTURE PART SKIM MOZZARELLA CHEESE (PART SKIM MILK, CHEESE CULTURES, SALT, ENZYMES)",
+        "WATER",
+        "SALT",
+        "CANOLA OIL",
+        "SPICES.)",
+        "PRD BROCCOLI",
+        "PRD SQUASH ZUCCHINI 20#(green, AIOLI SAUCE (OIL OLIVE PURE, HERB FRESH BASIL BUNCH, PRD GARLIC PEELED FRESH GAL, SALT, BLACK PEPPER, HERB FRESH OREGANO)",
+        "PRD PEPPER RED * AVG 22/25#",
+        "PRD CARROT",
+        "OIL WESSON CANOLA 4/1GAL",
+        "SALT"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "meal_name": "Dinner",
+   "genres": []
+  },
+  {
+   "meal_name": "Knight Room",
+   "genres": []
+  }
+ ],
+ "Neilson Dining Hall": [
+  {
+   "meal_name": "Breakfast",
+   "genres": []
+  },
+  {
+   "meal_name": "Lunch",
+   "genres": []
+  },
+  {
+   "meal_name": "Dinner",
+   "genres": []
+  },
+  {
+   "meal_name": "Knight Room",
+   "genres": []
+  }
+ ]
+}

@@ -3,6 +3,8 @@ var express = require('express');
 var session = require('express-session');
 var bodyParser = require('body-parser');
 var path = require('path');
+const {spawnSync} = require('child_process');
+const fs = require('fs');
 
 var app = express();
 var router = function (app, db) {
@@ -20,11 +22,25 @@ var router = function (app, db) {
     //Click menu button, go to dining hall menu suggestion page (menu.ejs)
     app.get('/menu', function(request, response) {
 		if (request.session.loggedin) {
-			response.render('pages/menu');
+			const ruMenu = new Promise(function(resolve, reject) {
+				db.query('SELECT CONVERT(DATE_FORMAT(Timestamp, "%m/%d"),CHAR) AS `Day`, `Location` AS `Dining_Hall`, `Meal_Time` AS `Meal_Type`, `Meal_Name` AS `Meal`, `Serving` AS `Serving_Size`, `Calories` AS `Meal_Calories` FROM `Rutgers_Menu`', function(err, rows) {
+					if (err) {
+						resolve(null);
+					}
+					else {
+						resolve (rows);
+					}
+				});
+			});
+			ruMenu.then(function(rows){
+				console.log(rows);
+				response.render('pages/menu', {rM:rows});
+				response.end();
+			})
 		} else {
 			response.send('Please login to view this page!');
+			response.end();
 		}
-		response.end();
 	});
 
     //Click food log button, go to food log page (foodlog.ejs)
