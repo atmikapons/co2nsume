@@ -28,6 +28,7 @@ var router = function (app, db) {
         let food = '';
         let serving = '';
         let calories = 0;
+        let genre_name = '';
         Object.keys(mydata['Busch Dining Hall']).forEach(function(key){
             Object.keys(mydata['Busch Dining Hall'][key]).forEach(function(key2){
                 if(key2 === 'genres'){
@@ -39,20 +40,20 @@ var router = function (app, db) {
                                     food = mydata['Busch Dining Hall'][key][key2][key3][key4][key5]['name'];
                                     serving = mydata['Busch Dining Hall'][key][key2][key3][key4][key5]['serving'];
                                     calories = mydata['Busch Dining Hall'][key][key2][key3][key4][key5]['calories'];
+                                    genre_name = mydata['Busch Dining Hall'][key][key2][key3]['genre_name'];
+                                    var carbon_emissions = getCarbonEstimate(genre_name, calories);
                                     if(typeof serving === 'undefined'){
                                         serving = 'no data';
                                     }
                                     if(typeof calories === 'undefined'){
                                         calories = 0;
                                     }
-                                    //values= [location, menu_time, food, serving, calories];
-                                    db.query(`CALL sendMenu(?, ?, ?, ?, ?)`, [location, menu_time, food, serving, calories],
+                                    db.query(`CALL sendMenu(?, ?, ?, ?, ?, ?)`, [location, menu_time, food, serving, calories, carbon_emissions],
                                     function (err, result){
                                         if (err){
                                             return res.status(500).send(err);
                                         }
                                     });
-                                    console.log("Values inserted");
                                 })
                             }
                         })
@@ -70,5 +71,26 @@ var router = function (app, db) {
             res.end();
         }
     });
+    function getCarbonEstimate (genre_name, calories){
+        let parsedCalories = parseFloat(calories);
+        let carbon_sum = 0;
+        if(genre_name == 'BREAKFAST MEATS' || genre_name == 'ENTREES' || genre_name == 'COOK TO ORDER'){
+            carbon_sum = (parsedCalories * 2.38).toFixed(2);
+        }
+        else if(genre_name == 'BREAKFAST ENTREES'){
+            carbon_sum = (parsedCalories * 3.06).toFixed(2);
+        }
+        else if(genre_name == 'BREAKFAST BAKERY' || genre_name == 'BAKERY MISC'){
+            carbon_sum = (parsedCalories * 0.64).toFixed(2);
+        }
+        else if(genre_name == 'SOUPS' || genre_name == 'VEGGIES' || genre_name == 'STARCH &  POTATOES' || genre_name == 'BREAKFAST MISC'){
+            carbon_sum = (parsedCalories * 1.39).toFixed(2);
+        }
+        else{
+            carbon_sum = (parsedCalories * 2.17).toFixed(2);
+        }
+
+        return carbon_sum;
+    }
 }
 module.exports=router;
