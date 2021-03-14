@@ -22,6 +22,7 @@ var router = function (app, db) {
 			stdio: 'pipe',
 			encoding: 'utf-8'
 		})
+        //parsing JSON output file for dining hall menu
         let mydata = JSON.parse(fs.readFileSync('output.json', 'utf-8'));
         let location = 'Busch';
         let menu_time = '';
@@ -71,23 +72,40 @@ var router = function (app, db) {
             res.end();
         }
     });
+
+    //calculating carbon estimates based on type of food
     function getCarbonEstimate (genre_name, calories){
         let parsedCalories = parseFloat(calories);
         let carbon_sum = 0;
-        if(genre_name == 'BREAKFAST MEATS' || genre_name == 'ENTREES' || genre_name == 'COOK TO ORDER'){
-            carbon_sum = (parsedCalories * 2.38).toFixed(2);
+        if(genre_name == 'BREAKFAST MEATS'){
+            carbon_sum = (parsedCalories * 5.15).toFixed(1);
         }
-        else if(genre_name == 'BREAKFAST ENTREES'){
-            carbon_sum = (parsedCalories * 3.06).toFixed(2);
+        else if(genre_name == 'BREAKFAST ENTREES' || genre_name == 'BAKERY MISC'){
+            carbon_sum = (parsedCalories * 3.24).toFixed(1);
         }
-        else if(genre_name == 'BREAKFAST BAKERY' || genre_name == 'BAKERY MISC'){
-            carbon_sum = (parsedCalories * 0.64).toFixed(2);
+        else if(genre_name == 'BREAKFAST BAKERY'){
+            carbon_sum = (parsedCalories * 0.59).toFixed(1);
         }
-        else if(genre_name == 'SOUPS' || genre_name == 'VEGGIES' || genre_name == 'STARCH &  POTATOES' || genre_name == 'BREAKFAST MISC'){
-            carbon_sum = (parsedCalories * 1.39).toFixed(2);
+        else if(genre_name == 'BREAKFAST MISC'){
+            carbon_sum = (parsedCalories * 1.67).toFixed(1);
         }
-        else{
-            carbon_sum = (parsedCalories * 2.17).toFixed(2);
+        else if(genre_name == 'SOUPS'){
+            carbon_sum = (parsedCalories * 2.93).toFixed(1);
+        }
+        else if(genre_name == 'ENTREES' || genre_name == 'DELI BAR ENTREE'){
+            carbon_sum = (parsedCalories * 5.07).toFixed(1);
+        }
+        else if(genre_name == 'STARCH &  POTATOES'){
+            carbon_sum == (parsedCalories * 0.63).toFixed(1);
+        }
+        else if(genre_name == 'VEGGIES' || genre_name == 'SALADS'){
+            carbon_sum == (parsedCalories * 0.28).toFixed(1);
+        }
+        else if(genre_name == 'COOK TO ORDER'){
+            carbon_sum == (parsedCalories * 4.65).toFixed(1);
+        }
+        else {
+            carbon_sum == (parsedCalories * 3.97).toFixed(1);
         }
 
         return carbon_sum;
