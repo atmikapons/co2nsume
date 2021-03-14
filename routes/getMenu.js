@@ -95,17 +95,17 @@ var router = function (app, db) {
         else if(genre_name == 'ENTREES' || genre_name == 'DELI BAR ENTREE'){
             carbon_sum = (parsedCalories * 5.07).toFixed(1);
         }
-        else if(genre_name == 'STARCH &  POTATOES'){
-            carbon_sum == (parsedCalories * 0.63).toFixed(1);
+        else if(genre_name == 'STARCH & POTATOES'){
+            carbon_sum = (parsedCalories * 0.63).toFixed(1);
         }
         else if(genre_name == 'VEGGIES' || genre_name == 'SALADS'){
-            carbon_sum == (parsedCalories * 0.28).toFixed(1);
+            carbon_sum = (parsedCalories * 0.28).toFixed(1);
         }
         else if(genre_name == 'COOK TO ORDER'){
-            carbon_sum == (parsedCalories * 4.65).toFixed(1);
+            carbon_sum = (parsedCalories * 4.65).toFixed(1);
         }
         else {
-            carbon_sum == (parsedCalories * 3.97).toFixed(1);
+            carbon_sum = (parsedCalories * 3.97).toFixed(1);
         }
 
         return carbon_sum;
