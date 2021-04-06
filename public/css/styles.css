@@ -208,12 +208,7 @@ h1.home{
 
 /* FOOD LOG */
 th{
-  color: #8ac926;
-  text-decoration: underline;
-  width:100px
-}
-table tr{
-  border-radius: 50%;
+  color: #89bb68;
 }
 table td{
   padding: 5px;
@@ -233,8 +228,20 @@ tbody {
   display: block;
 }
 tbody {
-  max-height: 400px;
+  max-height: 500px;
   overflow: auto;
+}
+
+th{
+  background-color: #f2f2f2;
+}
+
+#ruMenu-table {
+  margin-top: 30px;
+}
+
+.getMenu .button {
+  margin: 0;
 }
 
 /* STATS */

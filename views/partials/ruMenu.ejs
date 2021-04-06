@@ -8,19 +8,17 @@
 
         <!-- Table -->
         <table id = "ruMenu-table" class = "table" align="center">
-            <thead>
-                <tr>
-                    <!-- table headings -->
-                    <th class="text">Date</th>
-                    <th class="text">Dining Hall</th>
-                    <th class="text">Meal Type</th>
-                    <th class="text">Meal</th>
-                    <th class="text">Serving Size</th>
-                    <th class="text">Calories</th>
-                    <th class="text">Carbon</th>
-                </tr>
-            </thead>
-            <tbody>
+ 
+            <tr>
+                <!-- table headings -->
+                <th class="text">Date</th>
+                <th class="text">Dining Hall</th>
+                <th class="text">Meal Type</th>
+                <th class="text">Meal</th>
+                <th class="text">Serving Size</th>
+                <th class="text">Calories</th>
+                <th class="text">Carbon</th>
+            </tr>
             <!-- take data from Records table -->
                 <% if ( rM!= null ) { %>
                     <% rM.forEach(function(record) {  %>
@@ -49,7 +47,7 @@
                         </tr>
                     <% }) %>
                 <% } %>
-            </tbody>
         </table>
+    
     </div>
 </div>

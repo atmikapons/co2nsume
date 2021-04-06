@@ -7,20 +7,39 @@
 		<link rel="stylesheet" href="/css/styles.css">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
 	</head>
-	<body>
+	<body onload="alternate('thetable')">
 		<div class="container">
 			<div class="back">
 				<a href="/home" id="exit-app" title="Back to Home" class="icon"><i class="material-icons">arrow_back</i></a>      
 		   </div>
-			<h1home>Dining Hall Menu Suggestions</h1home>
+			<h1>Dining Hall Menu Suggestions</h1>
 		   <div class="getMenu">
 			<form method="post" action="/getMenu">
 				<input class="button" type="submit" value="Get Current Menu" id='get_menu'>
 			</form>
 		   </div>
-		   <div class="card">
+		   <div id="thetable" class="card">
 				<%- include('../partials/ruMenu') %>
 		   </div>
 		</div>
+		<script>
+			function alternate(id){ 
+				if(document.getElementsByTagName){  
+					var table = document.getElementById(id);  	
+					var rows = table.getElementsByTagName("tr");   
+
+					for(i = 0; i < rows.length; i++){           
+					//manipulate rows 
+						if(i <= 10){ 
+							rows[i].style.backgroundColor = "#cdeac0";
+						} else if (i <= 20){ 
+							rows[i].style.backgroundColor = "#efe9ae";
+						} else { 
+							rows[i].style.backgroundColor = "#fec3a6";
+						}       
+					} 
+				} 
+			}
+		</script>
 	</body>
 </html>
