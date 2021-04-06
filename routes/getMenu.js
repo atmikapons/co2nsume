@@ -5,6 +5,7 @@ var bodyParser = require('body-parser');
 var path = require('path');
 const {spawnSync} = require('child_process');
 const fs = require('fs');
+const { resolve } = require('path');
 
 var app = express();
 var router = function (app, db) {
@@ -51,9 +52,6 @@ var router = function (app, db) {
                                     }
                                     db.query(`CALL sendMenu(?, ?, ?, ?, ?, ?)`, [location, menu_time, food, serving, calories, carbon_emissions],
                                     function (err, result){
-                                        if (err){
-                                            return res.status(500).send(err);
-                                        }
                                     });
                                 })
                             }

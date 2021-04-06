@@ -23,7 +23,7 @@ var router = function (app, db) {
     app.get('/menu', function(request, response) {
 		if (request.session.loggedin) {
 			const ruMenu = new Promise(function(resolve, reject) {
-				db.query('SELECT CONVERT(DATE_FORMAT(Timestamp, "%m/%d"),CHAR) AS `Day`, `Location` AS `Dining_Hall`, `Meal_Time` AS `Meal_Type`, `Meal_Name` AS `Meal`, `Serving` AS `Serving_Size`, `Calories` AS `Meal_Calories`, `Carbon_Sum` AS `Carbon` FROM `Rutgers_Menu`', function(err, rows) {
+				db.query('SELECT CONVERT(DATE_FORMAT(Timestamp, "%m/%d"),CHAR) AS `Day`, `Location` AS `Dining_Hall`, `Meal_Time` AS `Meal_Type`, `Meal_Name` AS `Meal`, `Serving` AS `Serving_Size`, `Calories` AS `Meal_Calories`, `Carbon_Sum` AS `Carbon` FROM `Rutgers_Menu` ORDER BY Carbon ASC', function(err, rows) {
 					if (err) {
 						resolve(null);
 					}
