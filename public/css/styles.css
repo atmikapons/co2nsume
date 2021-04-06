@@ -29,7 +29,7 @@ h1{
 .container{
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   margin: 0;
   position: absolute;
@@ -177,7 +177,7 @@ input[type=text], input[type=password] {
 
 /* HOME */
 .logout{
-  margin-top: 0px;
+  margin-top: 20px;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -193,6 +193,10 @@ input[type=text], input[type=password] {
   flex-direction: row;
   justify-content: start;
   align-items: center;
+}
+.orange{
+  margin-top: 20px;
+  margin-right: 20px;
 }
 h1.home{
   margin: 0;
