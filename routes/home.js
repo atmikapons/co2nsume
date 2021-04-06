@@ -121,6 +121,5 @@ var router = function (app, db) {
 		}
 		response.end();
 	});
-
 }
 module.exports=router;

@@ -44,9 +44,11 @@ var router = function (app,db) {
 	});
 
 	//Go to home page after logging in
-	app.get('/login', function(request, response) {
+	app.get('/login', async function(request, response) {
 		if (request.session.loggedin) {
-			response.render('pages/home');
+			var display_emissions = await displayCarbon(request.session.username);
+			console.log('home carbon: ' + display_emissions);
+			response.render('pages/home', {display_emissions});
 		} else {
 			response.send('Please login to view this page!');
 		}
@@ -64,6 +66,18 @@ var router = function (app,db) {
 		request.session.destroy();
 		response.redirect("/");
 	});
+
+	function displayCarbon(username) {
+		return new Promise((resolve, reject) => {
+            db.query('SELECT `Carbon` FROM `User Info` WHERE `USERNAME`="' +username+'"' , function(err, result) {
+                if (err) {
+                    resolve (0);
+                } else {
+                    resolve(result[0].Carbon);
+                }
+            });
+        })
+	}
 }
 module.exports=router;
 
