@@ -32,6 +32,7 @@
                         <input class="captured" type="hidden" name="photo" id="photo" value="none">
                     </form>
                     <a class="button takephoto" href="#" id="take-photo" title="Take Photo" onclick="photo()">Take Photo</a>
+                    <a class="button flip" href="#" id="flip-cam" title="Flip" onclick="flip()">Flip Camera</a>
                     <a class="button retakephoto" href="/upload" id="retake-photo" title="Retake Photo">Retake Photo</a>
                 </div>
             </div>        
@@ -59,6 +60,7 @@
         const uploadButton = document.getElementById('upload');
         const takephoto = document.getElementById('take-photo');
         const retakephoto = document.getElementById('retake-photo');
+        const camflip= document.getElementById("flip-cam");
 
         uploadButton.style.display="none"
         retakephoto.style.display="none"
@@ -81,6 +83,11 @@
             uploadButton.style.display="block";
             retakephoto.style.display="block";
             takephoto.style.display="none";
+            camflip.style.display="none";
+        }
+        function flip(){
+            webcam.flip();
+            webcam.start();
         }
         
      </script>
