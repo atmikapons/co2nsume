@@ -48,6 +48,9 @@ var router = function (app, db) {
             var carbon_estimate = await outputToCarbonEstimate(output);
             console.log('total carbon estimate:' + carbon_estimate);
 
+            var user_carbon = await getCarbon(req.session.username);
+            console.log('user carbon' + user_carbon);
+            var total_user_carbon = carbon_estimate + user_carbon;
             //outputs none if no food is detected
             if(carbon_estimate == 0){
                 output = "Foods are: None";
@@ -63,6 +66,11 @@ var router = function (app, db) {
                     }
                 });
 
+                db.query('UPDATE `User Info` SET `Carbon`= "'+total_user_carbon+'" WHERE `Username`="'+req.session.username+'"', [[[total_user_carbon]]], function(err, result) {
+                    if (err) {
+                        return res.status(500).send(err);
+                    }
+                });
                 //food output fixed for non-plural form
                 let strings = output.split(" ");
                 let result = 'Foods are: ';
@@ -144,6 +152,18 @@ var router = function (app, db) {
               }
             );
           });
+    }
+
+    function getCarbon(username) {
+        return new Promise((resolve, reject) => {
+            db.query('SELECT `Carbon` FROM `User Info` WHERE `USERNAME`="' +username+'"' , function(err, result) {
+                if (err) {
+                    resolve (0);
+                } else {
+                    resolve(result[0].Carbon);
+                }
+            })
+        })
     }
 });
 }  
