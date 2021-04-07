@@ -12,12 +12,16 @@
 			<div class="back">
 				<a href="/menu" id="exit-app" title="Back to Home" class="icon"><i class="material-icons">arrow_back</i></a>      
 		   </div>
-			<h1home>Dining Hall Menu Suggestions</h1home>
+			<h1home>Fetching the current menu...</h1home>
 		   <div class="viewMenu">
-			<form method="get" action="/menu">
+			<form id="f" method="get" action="/menu"></form>
+			<!-- <form method="get" action="/menu">
 				<input class="button" type="submit" value="View Menu" id='view_menu'>
-			</form>
+			</form> -->
 		   </div>
 		</div>
+		<script>
+		document.getElementById("f").submit();
+		</script>
 	</body>
 </html>

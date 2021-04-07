@@ -112,14 +112,5 @@ var router = function (app, db) {
 		response.end();
 	});
 
-    //Click back button, go to home page (home.ejs)
-    app.get('/home', function(request, response) {
-		if (request.session.loggedin) {
-			response.render('pages/home');
-		} else {
-			response.send('Please login to view this page!');
-		}
-		response.end();
-	});
 }
 module.exports=router;

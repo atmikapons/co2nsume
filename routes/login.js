@@ -54,6 +54,17 @@ var router = function (app,db) {
 		}
 		response.end();
 	});
+	//Click back button, go to home page (home.ejs)
+    app.get('/home', async function(request, response) {
+		if (request.session.loggedin) {
+			var display_emissions = await displayCarbon(request.session.username);
+			console.log('home carbon: ' + display_emissions);
+			response.render('pages/home', {display_emissions});
+		} else {
+			response.send('Please login to view this page!');
+		}
+		response.end();
+	});
 
 	//Go to signup page when click signup button
 	app.get('/signup', function (request, response) {

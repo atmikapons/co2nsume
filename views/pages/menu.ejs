@@ -14,9 +14,10 @@
 		   </div>
 			<h1>Dining Hall Menu Suggestions</h1>
 		   <div class="getMenu">
-			<form method="post" action="/getMenu">
+			<form id="f" method="post" action="/getMenu"></form>
+			<!-- <form method="get" action="/getMenu">
 				<input class="button" type="submit" value="Get Current Menu" id='get_menu'>
-			</form>
+			</form> -->
 		   </div>
 		   <div id="thetable" class="card">
 				<%- include('../partials/ruMenu') %>
@@ -26,7 +27,15 @@
 			function alternate(id){ 
 				if(document.getElementsByTagName){  
 					var table = document.getElementById(id);  	
-					var rows = table.getElementsByTagName("tr");   
+					var rows = table.getElementsByTagName("tr"); 
+					var date=rows[1].cells[0].innerText; 
+					var today = new Date();
+						var dd = String(today.getDate()).padStart(2, '0');
+						var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+						today = mm + '/' + dd;
+					if (date!=today){
+						document.getElementById("f").submit();
+					}
 
 					for(i = 0; i < rows.length; i++){           
 					//manipulate rows 
