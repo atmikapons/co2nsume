@@ -11,7 +11,7 @@
  
             <tr>
                 <!-- table headings -->
-                <th class="text">Date</th>
+                <!-- <th class="text">Date</th> -->
                 <th class="text">Dining Hall</th>
                 <th class="text">Meal Type</th>
                 <th class="text">Meal</th>
@@ -22,10 +22,10 @@
             <!-- take data from Records table -->
                 <% if ( rM!= null ) { %>
                     <% rM.forEach(function(record) {  %>
-                        <tr value="<%= record.Day %>">
-                            <td>
+                        <tr name="<%= record.Day %>" value="<%= record.Day %>">
+                            <!-- <td>
                                 <%= record.Day %>
-                            </td>
+                            </td> -->
                             <td>
                                 <%= record.Dining_Hall %>
                             </td>

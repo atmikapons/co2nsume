@@ -28,7 +28,8 @@
 				if(document.getElementsByTagName){  
 					var table = document.getElementById(id);  	
 					var rows = table.getElementsByTagName("tr"); 
-					var date=rows[1].cells[0].innerText; 
+					//var date=rows[1].cells[0].innerText; 
+					var date=rows[1].getAttribute('name');
 					var today = new Date();
 						var dd = String(today.getDate()).padStart(2, '0');
 						var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
@@ -36,6 +37,8 @@
 					if (date!=today){
 						document.getElementById("f").submit();
 					}
+					var cols = table.getElementsByTagName("td");
+					cols.style.visibility="collapse";
 
 					for(i = 0; i < rows.length; i++){           
 					//manipulate rows 
