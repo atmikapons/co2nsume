@@ -20,18 +20,19 @@
 				<a href="/home" id="exit-app" title="Back to Home" class="icon"><i class="material-icons">arrow_back</i></a>      
 		   </div>
 			<h1>Create an account</h1>
-			<form class="form signup-form" action="" method="POST" enctype="multipart/form-data">
+			<form class="form signup-form" action="/sign" method="POST">
 				<!-- insert an alert if username is not unique -->
 				<fieldset>
-					<input type="text" id="user-name" placeholder="Username - must be unique" required>
-					<input type="text" id="first-name" placeholder="First Name" required>
-					<input type="text" id="last-name" placeholder="Last Name" required>
-					<input type="password" id="password" placeholder="Password" required>
+					<input type="text" id="user-name" name="username" placeholder="Username - must be unique" required>
+					<input type="text" id="first-name" name="first" placeholder="First Name" required>
+					<input type="text" id="last-name" name="last" placeholder="Last Name" required>
+					<input type="password" id="password" name="password" placeholder="Password" required>
 				</fieldset>
 				<button type="submit" class="button create" id="create-user-button"> Create </button>               
             </form>
 		</div>
 		<script>
+			/*
 			$(document).ready(function() {
 				$("#create-user-button").click(function (event){
 					event.preventDefault();
@@ -58,6 +59,7 @@
 				});
 			});
 		});
+		*/
 		</script>
 	</body>
 </html>
