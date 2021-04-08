@@ -58,13 +58,6 @@ var router = function (app, db) {
             //add food and carbon sum into the food log
             else{
                 let out=output.slice(11);
-                let values=[[req.session.username, out, carbon_estimate]];
-                let addFood = "INSERT INTO `Food Log` (Username, Food_Recognized, Carbon_Sum) VALUES ?";
-                db.query(addFood, [values], function (err, result) {
-                    if (err) {
-                        return res.status(500).send(err);
-                    }
-                });
 
                 db.query('UPDATE `User Info` SET `Carbon`= "'+total_user_carbon+'" WHERE `Username`="'+req.session.username+'"', [[[total_user_carbon]]], function(err, result) {
                     if (err) {
@@ -97,7 +90,15 @@ var router = function (app, db) {
                         }
                     }
                 }
-                output = result;
+                output=result.replace("_", " ");
+                
+                let values=[[req.session.username, output.slice(11), carbon_estimate]];
+                let addFood = "INSERT INTO `Food Log` (Username, Food_Recognized, Carbon_Sum) VALUES ?";
+                db.query(addFood, [values], function (err, result) {
+                    if (err) {
+                        return res.status(500).send(err);
+                    }
+                });
             }
             //send image and output line to upload page
             fs.readFile('runs/detect/exp/photo.png', function(err, data) {
