@@ -25,11 +25,12 @@ h1{
     color: var(--textshadow);
     font-size: 28px;
     font-weight: 300;
+    margin-top: 60px;
 }
 .container{
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   margin: 0;
   position: absolute;
@@ -84,7 +85,7 @@ h1{
 }
 .material-icons{
   margin: 5px;
-  color: var(--white);
+  color: var(--button);
 }
 .material-icons:hover{
   color: var(--containershadow);
@@ -239,8 +240,13 @@ h1.home{
 }
 
 /* FOOD LOG */
+h1.dhmenu{
+  margin-top: 20px;
+  padding-top: 40px;
+}
 th{
   color: #89bb68;
+  background-color: #f2f2f2;
 }
 table td{
   padding: 5px;
@@ -260,16 +266,14 @@ tbody {
   display: block;
 }
 tbody {
-  max-height: 500px;
+  display:block;
+  width: 100%;
   overflow: auto;
-}
-
-th{
-  background-color: #f2f2f2;
+  max-height: 650px;
 }
 
 #ruMenu-table {
-  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .getMenu .button {

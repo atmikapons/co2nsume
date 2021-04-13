@@ -13,8 +13,78 @@
 			<div class="back">
 				<a href="/home" id="exit-app" title="Back to Home" class="icon"><i class="material-icons">arrow_back</i></a>      
 		   </div>
-			<h1home>Information</h1home>
-			<h4>CO2 bad for Earth. Junk food bad for Earth. YOU bad for Earth. CO2nsume will fix. THE END.</h4>
+		   <div class="mySlides">
+			    <h1>About</h1>
+				<p>
+					Did you know that food production accounts for 30% of total global greenhouse gas emissions?
+				</p>
+				<p>
+					CO2nsume (pronounced like the word “consume”), aims to raise student awareness of the environmental impacts of eating habits, and encourage a healthier, more sustainable lifestyle.  
+				</p>
+		   </div>
+		   <div class="mySlides"> 
+				<p>
+					<h2>Objectives</h2>
+					<h3>Sustainability</h3>
+					<p>Reduce carbon emissions from food production </p>
+					<h3>Health</h3>
+					<p>Encourage healthier lifestyles</p>
+					<h3>Awareness</h3>
+					<p>Highlight the connection between eating habits, health, and the environment</p>
+				</p>
+		   </div>
+		   <div class="mySlides">
+			<h2>Features</h2>
+			<p>
+				CO2nsume utilizes machine learning algorithms to identify foods via smartphone images and calculate the CO2 emissions associated with producing and transporting the foods.
+			</p>
+
+		   </div>
+		   <div class="mySlides">
+			<p>
+				It also integrates university dining hall menus to suggest healthier and more sustainable meals to students. 
+			</p>
+			<p> 
+				CO2nsume is capable of identifying 39 foods most commonly eaten on college campuses:
+			</p>
+		   </div>
+		   <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  		   <a class="next" onclick="plusSlides(1)">&#10095;</a>
+		   <div style="text-align:center">
+				<span class="dot" onclick="currentSlide(1)"></span>
+				<span class="dot" onclick="currentSlide(2)"></span>
+				<span class="dot" onclick="currentSlide(3)"></span>
+		   </div>
 		</div>
+		<script>
+			var slideIndex = 1;
+			showSlides(slideIndex);
+
+			// Next/previous controls
+			function plusSlides(n) {
+			showSlides(slideIndex += n);
+			}
+
+			// Thumbnail image controls
+			function currentSlide(n) {
+			showSlides(slideIndex = n);
+			}
+
+			function showSlides(n) {
+			var i;
+			var slides = document.getElementsByClassName("mySlides");
+			var dots = document.getElementsByClassName("dot");
+			if (n > slides.length) {slideIndex = 1}
+			if (n < 1) {slideIndex = slides.length}
+			for (i = 0; i < slides.length; i++) {
+				slides[i].style.display = "none";
+			}
+			for (i = 0; i < dots.length; i++) {
+				dots[i].className = dots[i].className.replace(" active", "");
+			}
+			slides[slideIndex-1].style.display = "block";
+			dots[slideIndex-1].className += " active";
+			}
+		</script>
 	</body>
 </html>
