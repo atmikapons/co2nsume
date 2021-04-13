@@ -47,14 +47,13 @@
 
         <!-- Table -->
         <table id = "byWeek-table" class = "table table-bordered" align="center">
-            <thead>
+
                 <tr>
                     <!-- table headings -->
                     <th class="text">Date</th>
                     <th class="text">CO2(g) per day </th>
                 </tr>
-            </thead>
-            <tbody>
+           
             <!-- take data from Records table -->
                 <% if ( CbyW!= null ) { %>
                     <% CbyW.forEach(function(record) {  %>
@@ -68,7 +67,7 @@
                         </tr>
                     <% }) %>
                 <% } %>
-            </tbody>
+        
         </table>
     </div>
 </div>

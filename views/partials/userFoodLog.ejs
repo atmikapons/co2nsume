@@ -9,15 +9,15 @@
 
         <!-- Table -->
         <table id = "userFoodLog-table" class = "table" align="center">
-            <thead>
+    
                 <tr>
                     <!-- table headings -->
                     <th class="text">Date</th>
                     <th class="text">Food</th>
                     <th class="text">Carbon Emissions</th>
                 </tr>
-            </thead>
-            <tbody>
+     
+
             <!-- take data from Records table -->
                 <% if ( fL!= null ) { %>
                     <% fL.forEach(function(record) {  %>
@@ -34,7 +34,7 @@
                         </tr>
                     <% }) %>
                 <% } %>
-            </tbody>
+    
         </table>
     </div>
 </div>
