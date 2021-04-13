@@ -142,13 +142,15 @@ input[type=text], input[type=password] {
   width: 25%;
   margin: auto;
 }
-.upload{
+ .upload{
+  background-color: var(--button);
   margin: auto;
   margin-top: 10px;
 }
 .retakephoto{
-  margin-top: 130px;
-}
+  width: 25%;
+  margin:auto;
+} 
 
 /* LOADING */
 .progressBar{

@@ -46,7 +46,8 @@ var router = function (app,db) {
 	//Go to home page after logging in
 	app.get('/login', async function(request, response) {
 		if (request.session.loggedin) {
-			var display_emissions = await displayCarbon(request.session.username);
+			var emissions = await displayCarbon(request.session.username);
+			var display_emissions = (emissions/1000.00).toFixed(2);
 			console.log('home carbon: ' + display_emissions);
 			response.render('pages/home', {display_emissions});
 		} else {
@@ -57,7 +58,8 @@ var router = function (app,db) {
 	//Click back button, go to home page (home.ejs)
     app.get('/home', async function(request, response) {
 		if (request.session.loggedin) {
-			var display_emissions = await displayCarbon(request.session.username);
+			var emissions = await displayCarbon(request.session.username);
+			var display_emissions = (emissions/1000.00).toFixed(2);
 			console.log('home carbon: ' + display_emissions);
 			response.render('pages/home', {display_emissions});
 		} else {
