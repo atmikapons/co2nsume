@@ -92,7 +92,7 @@ p {
 }
 .material-icons{
   margin: 5px;
-  color: var(--button);
+  color: var(--offwhite);
 }
 .material-icons:hover{
   color: var(--containershadow);
