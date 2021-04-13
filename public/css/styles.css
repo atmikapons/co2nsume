@@ -27,6 +27,13 @@ h1{
     font-weight: 300;
     margin-top: 60px;
 }
+h3 {
+  font-size: 22px;
+  color: #8ac926;
+}
+p {
+  color: var(--text);
+}
 .container{
   display: flex;
   flex-direction: column;
@@ -285,6 +292,82 @@ tbody {
 /* STATS */
 #byWeek-table{
   margin-top: 30px;
+}
+
+/* INFO */
+.mySlides {
+  position: absolute;
+  top: 20%;
+  width: 70%;
+}
+
+
+
+.earth {
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: var(--button);
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  color: var(--offwhite);
+  background-color: rgba(0,0,0,0.8);
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: var(--containershadow);
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  transform: translateY(400px);
+}
+
+.active, .dot:hover {
+  background-color: var(--button);
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
 }
 
 /* MEDIA QUERIES */ 
